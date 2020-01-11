@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Start</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" /> 
+	<link rel="stylesheet" href="css/styles.min.css">
+
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8b4980b1-0f79-491d-b797-78aaf81d44c1" type="text/javascript"></script>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+	
+
+    
+</head>
+<body>
+	<div class="page">
+		<!-- DELETDELETDELETDELETDELETDELETDELETDELETDELETDELET -->
+		<div id="width-height" style="position: fixed; bottom: 50px; right: 50px; z-index: 99999;">
+			<script>
+				var w = window.innerWidth
+				|| document.documentElement.clientWidth
+				|| document.body.clientWidth;
+
+				var h = window.innerHeight
+				|| document.documentElement.clientHeight
+				|| document.body.clientHeight;
+
+				var x = document.getElementById("width-height");
+				x.innerHTML = w + "x" + h;
+			</script>
+		</div>
+		<!-- DELETDELETDELETDELETDELETDELETDELETDELETDELETDELET -->
+
+		
+
+		<header id="header-scroll" class="header-scroll" style="background-color: #ff9ac7">  <!-- #5bdbe8; -->
+			<div class="header-scroll-container">
+				<div class="header-scroll__btn-menu">
+					<button class="hamburger hamburger--collapse" type="button">
+					  <span class="hamburger-box">
+					    <span class="hamburger-inner"></span>
+					  </span>
+					</button>
+				</div>
+				<div class="header-scroll__logotype">
+					<a href="index.html">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="204px" height="28px">
+						<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+						 d="M204.004,21.906 L204.004,27.321 L185.347,27.321 L185.347,0.680 L203.328,0.680 L203.328,6.096 L191.180,6.096 L191.180,11.064 L202.658,11.064 L202.658,16.485 L191.180,16.485 L191.180,21.906 L204.004,21.906 ZM179.308,25.704 C178.362,26.281 177.297,26.695 176.113,26.945 C174.929,27.196 173.750,27.321 172.577,27.321 L161.738,27.321 L161.738,0.680 L171.604,0.680 C172.750,0.680 173.907,0.763 175.064,0.920 C176.221,1.089 177.264,1.415 178.183,1.900 C179.108,2.389 179.854,3.075 180.427,3.951 C181.000,4.827 181.287,5.998 181.287,7.451 C181.287,8.958 180.870,10.205 180.038,11.196 C179.200,12.191 178.097,12.898 176.729,13.323 L176.729,13.400 C177.599,13.525 178.394,13.769 179.102,14.134 C179.811,14.499 180.422,14.961 180.935,15.527 C181.443,16.088 181.838,16.747 182.108,17.503 C182.384,18.254 182.524,19.054 182.524,19.909 C182.524,21.313 182.222,22.488 181.627,23.430 C181.027,24.366 180.254,25.128 179.308,25.704 ZM175.102,7.059 C174.864,6.695 174.561,6.412 174.188,6.210 C173.810,6.009 173.388,5.868 172.912,5.780 C172.442,5.688 171.977,5.644 171.534,5.644 L167.571,5.644 L167.571,11.326 L171.793,11.326 C172.242,11.326 172.685,11.277 173.123,11.179 C173.556,11.076 173.950,10.912 174.296,10.689 C174.648,10.466 174.929,10.161 175.140,9.786 C175.350,9.410 175.459,8.958 175.459,8.430 C175.459,7.881 175.340,7.423 175.102,7.059 ZM176.221,17.710 C175.913,17.318 175.518,17.024 175.048,16.823 C174.572,16.621 174.058,16.485 173.512,16.409 C172.966,16.333 172.453,16.301 171.977,16.301 L167.571,16.301 L167.571,22.352 L172.804,22.352 C173.247,22.352 173.707,22.303 174.166,22.205 C174.626,22.107 175.048,21.927 175.421,21.677 C175.794,21.426 176.097,21.100 176.334,20.697 C176.572,20.295 176.691,19.811 176.691,19.234 C176.691,18.602 176.534,18.096 176.221,17.710 ZM150.222,21.677 L139.939,21.677 L137.734,27.321 L131.306,27.321 L142.745,0.680 L147.568,0.680 L159.083,27.321 L152.503,27.321 L150.222,21.677 ZM144.989,8.430 L141.772,16.708 L148.244,16.708 L144.989,8.430 ZM127.381,25.704 C126.435,26.281 125.370,26.695 124.186,26.945 C123.002,27.196 121.823,27.321 120.650,27.321 L109.810,27.321 L109.810,0.680 L119.682,0.680 C120.828,0.680 121.980,0.763 123.137,0.920 C124.299,1.089 125.337,1.415 126.262,1.900 C127.181,2.389 127.927,3.075 128.505,3.951 C129.073,4.827 129.365,5.998 129.365,7.451 C129.365,8.958 128.943,10.205 128.110,11.196 C127.273,12.191 126.170,12.898 124.802,13.323 L124.802,13.400 C125.672,13.525 126.467,13.769 127.175,14.134 C127.889,14.499 128.494,14.961 129.008,15.527 C129.516,16.088 129.911,16.747 130.186,17.503 C130.457,18.254 130.598,19.054 130.598,19.909 C130.598,21.313 130.295,22.488 129.700,23.430 C129.100,24.371 128.327,25.128 127.381,25.704 ZM123.175,7.059 C122.937,6.695 122.634,6.412 122.261,6.210 C121.882,6.009 121.461,5.868 120.991,5.780 C120.515,5.688 120.055,5.644 119.607,5.644 L115.644,5.644 L115.644,11.326 L119.866,11.326 C120.315,11.326 120.758,11.277 121.196,11.179 C121.628,11.076 122.023,10.912 122.369,10.689 C122.721,10.466 123.002,10.161 123.212,9.786 C123.423,9.410 123.531,8.958 123.531,8.430 C123.531,7.881 123.413,7.423 123.175,7.059 ZM124.299,17.710 C123.986,17.318 123.591,17.024 123.121,16.823 C122.645,16.621 122.137,16.485 121.585,16.409 C121.039,16.333 120.526,16.301 120.055,16.301 L115.644,16.301 L115.644,22.352 L120.877,22.352 C121.326,22.352 121.780,22.303 122.239,22.205 C122.704,22.107 123.121,21.927 123.494,21.677 C123.867,21.426 124.169,21.100 124.407,20.697 C124.645,20.295 124.764,19.811 124.764,19.234 C124.764,18.602 124.607,18.096 124.299,17.710 ZM102.858,24.218 C101.587,25.438 100.079,26.369 98.338,27.022 C96.592,27.674 94.684,28.001 92.618,28.001 C90.548,28.001 88.639,27.674 86.899,27.022 C85.152,26.369 83.644,25.438 82.374,24.218 C81.103,23.000 80.114,21.530 79.400,19.794 C78.692,18.064 78.335,16.131 78.335,13.997 C78.335,11.870 78.692,9.933 79.400,8.207 C80.114,6.477 81.103,5.002 82.374,3.783 C83.644,2.563 85.152,1.633 86.899,0.980 C88.639,0.327 90.548,-0.000 92.618,-0.000 C94.684,-0.000 96.592,0.327 98.338,0.980 C100.079,1.633 101.587,2.563 102.858,3.783 C104.134,5.002 105.123,6.477 105.831,8.207 C106.540,9.933 106.896,11.870 106.896,13.997 C106.896,16.131 106.540,18.064 105.831,19.794 C105.123,21.530 104.134,23.000 102.858,24.218 ZM100.263,10.574 C99.874,9.524 99.322,8.616 98.598,7.848 C97.873,7.081 97.008,6.488 95.997,6.057 C94.992,5.633 93.862,5.421 92.618,5.421 C91.370,5.421 90.245,5.633 89.234,6.057 C88.223,6.488 87.358,7.081 86.634,7.848 C85.915,8.616 85.358,9.524 84.969,10.574 C84.585,11.631 84.390,12.774 84.390,13.997 C84.390,15.255 84.585,16.403 84.969,17.443 C85.358,18.488 85.915,19.386 86.634,20.153 C87.358,20.921 88.223,21.514 89.234,21.944 C90.245,22.368 91.370,22.581 92.618,22.581 C93.862,22.581 94.992,22.368 95.997,21.944 C97.008,21.514 97.873,20.921 98.598,20.153 C99.322,19.386 99.874,18.488 100.263,17.443 C100.647,16.403 100.841,15.255 100.841,13.997 C100.841,12.774 100.647,11.631 100.263,10.574 ZM71.442,5.981 C70.610,5.606 69.642,5.421 68.544,5.421 C67.447,5.421 66.436,5.633 65.501,6.057 C64.565,6.488 63.754,7.081 63.068,7.848 C62.381,8.616 61.846,9.524 61.462,10.574 C61.073,11.631 60.884,12.774 60.884,13.997 C60.884,15.255 61.073,16.403 61.462,17.443 C61.846,18.488 62.376,19.386 63.052,20.153 C63.722,20.921 64.517,21.514 65.425,21.944 C66.333,22.368 67.312,22.581 68.361,22.581 C69.555,22.581 70.615,22.331 71.534,21.829 C72.459,21.329 73.221,20.627 73.815,19.718 L78.676,23.369 C77.557,24.954 76.135,26.118 74.416,26.869 C72.696,27.626 70.928,28.001 69.106,28.001 C67.036,28.001 65.133,27.674 63.387,27.022 C61.641,26.369 60.132,25.438 58.862,24.218 C57.591,23.000 56.602,21.530 55.894,19.794 C55.180,18.064 54.829,16.131 54.829,13.997 C54.829,11.870 55.180,9.933 55.894,8.207 C56.602,6.477 57.591,5.002 58.862,3.783 C60.132,2.563 61.641,1.633 63.387,0.980 C65.133,0.327 67.036,-0.000 69.106,-0.000 C69.853,-0.000 70.631,0.071 71.442,0.207 C72.253,0.349 73.053,0.566 73.837,0.866 C74.621,1.170 75.372,1.568 76.097,2.073 C76.821,2.569 77.470,3.189 78.043,3.914 L73.556,7.603 C72.983,6.902 72.280,6.362 71.442,5.981 ZM48.611,24.218 C47.341,25.438 45.833,26.369 44.092,27.022 C42.346,27.674 40.437,28.001 38.372,28.001 C36.302,28.001 34.393,27.674 32.652,27.022 C30.906,26.369 29.398,25.438 28.127,24.218 C26.857,23.000 25.867,21.530 25.156,19.794 C24.446,18.064 24.091,16.131 24.091,13.997 C24.091,11.870 24.446,9.933 25.156,8.207 C25.867,6.477 26.857,5.002 28.127,3.783 C29.398,2.563 30.906,1.633 32.652,0.980 C34.393,0.327 36.302,-0.000 38.372,-0.000 C40.437,-0.000 42.346,0.327 44.092,0.980 C45.833,1.633 47.341,2.563 48.611,3.783 C49.887,5.002 50.877,6.477 51.585,8.207 C52.299,9.933 52.650,11.870 52.650,13.997 C52.650,16.131 52.299,18.064 51.585,19.794 C50.877,21.530 49.887,23.000 48.611,24.218 ZM43.897,3.576 C39.983,0.316 33.744,1.323 29.668,6.275 C25.597,11.222 25.770,17.585 29.684,20.850 C30.052,21.154 30.446,21.416 30.857,21.650 C30.863,21.655 30.868,21.661 30.873,21.666 C30.911,21.682 30.938,21.699 30.971,21.716 C31.095,21.786 31.214,21.857 31.344,21.922 C38.572,25.552 44.632,17.443 45.189,16.518 C47.979,11.843 47.374,6.477 43.897,3.576 ZM40.762,7.081 C35.707,7.081 31.944,11.043 31.944,15.887 C31.944,16.725 32.058,17.536 32.268,18.308 C30.993,16.947 30.225,15.103 30.225,13.067 C30.225,8.958 33.420,5.595 37.702,5.595 C39.534,5.595 41.167,6.210 42.432,7.233 C41.897,7.135 41.335,7.081 40.762,7.081 ZM8.227,20.153 C8.902,20.921 9.692,21.514 10.600,21.944 C11.511,22.368 12.492,22.581 13.536,22.581 C14.733,22.581 15.793,22.331 16.715,21.829 C17.636,21.329 18.396,20.627 18.996,19.718 L23.856,23.369 C22.732,24.954 21.315,26.118 19.593,26.869 C17.872,27.626 16.104,28.001 14.284,28.001 C12.217,28.001 10.308,27.674 8.565,27.022 C6.821,26.369 5.313,25.438 4.042,24.218 C2.772,23.000 1.780,21.530 1.069,19.794 C0.361,18.064 0.004,16.131 0.004,13.997 C0.004,11.870 0.361,9.933 1.069,8.207 C1.780,6.477 2.772,5.002 4.042,3.783 C5.313,2.563 6.821,1.633 8.565,0.980 C10.308,0.327 12.217,-0.000 14.284,-0.000 C15.033,-0.000 15.812,0.071 16.620,0.207 C17.431,0.349 18.228,0.566 19.012,0.866 C19.799,1.170 20.553,1.568 21.277,2.073 C21.996,2.569 22.645,3.189 23.218,3.914 L18.731,7.603 C18.161,6.902 17.455,6.362 16.620,5.981 C15.785,5.606 14.820,5.421 13.725,5.421 C12.627,5.421 11.611,5.633 10.676,6.057 C9.741,6.488 8.935,7.081 8.248,7.848 C7.562,8.616 7.027,9.524 6.640,10.574 C6.253,11.631 6.059,12.774 6.059,13.997 C6.059,15.255 6.253,16.403 6.640,17.443 C7.027,18.488 7.556,19.386 8.227,20.153 Z"/>
+						</svg>
+					</a>
+				</div>
+				<div class="header-scroll__btn-busket">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="28px" fill="#fff">
+					<path fill-rule="evenodd" d="M27.853,14.473 L26.259,25.512 C26.054,26.930 24.808,27.999 23.360,27.999 L6.860,27.999 C5.422,27.999 4.207,26.980 3.971,25.578 L2.100,14.475 C0.927,14.385 -0.000,13.412 -0.000,12.229 L-0.000,10.941 C-0.000,9.699 1.022,8.689 2.277,8.689 L3.829,8.689 C3.841,8.675 3.852,8.663 3.865,8.650 L12.324,0.282 C12.706,-0.095 13.324,-0.095 13.705,0.282 C14.086,0.659 14.086,1.270 13.705,1.647 L6.586,8.689 L23.347,8.689 L16.229,1.647 C15.848,1.270 15.848,0.659 16.229,0.282 C16.610,-0.095 17.228,-0.095 17.609,0.282 L26.069,8.650 C26.081,8.662 26.093,8.675 26.104,8.689 L27.656,8.689 C28.912,8.689 29.934,9.699 29.934,10.941 L29.934,12.229 C29.934,13.406 29.017,14.374 27.853,14.473 ZM27.981,10.941 C27.981,10.764 27.836,10.619 27.656,10.619 L2.277,10.619 C2.098,10.619 1.952,10.764 1.952,10.941 L1.952,12.229 C1.952,12.406 2.098,12.551 2.277,12.551 C2.576,12.551 11.610,12.551 12.038,12.551 C12.578,12.551 13.015,12.983 13.015,13.517 C13.015,14.049 12.578,14.482 12.038,14.482 L4.081,14.482 L5.897,25.261 C5.976,25.728 6.380,26.068 6.860,26.068 L23.360,26.068 C23.843,26.068 24.258,25.711 24.326,25.239 L25.880,14.482 L17.895,14.482 C17.356,14.482 16.919,14.049 16.919,13.517 C16.919,12.983 17.356,12.551 17.895,12.551 C18.323,12.551 27.356,12.551 27.656,12.551 C27.835,12.551 27.981,12.406 27.981,12.229 L27.981,10.941 ZM14.967,24.137 C14.428,24.137 13.991,23.705 13.991,23.171 L13.991,17.378 C13.991,16.845 14.428,16.412 14.967,16.412 C15.506,16.412 15.943,16.845 15.943,17.378 L15.943,23.171 C15.943,23.705 15.506,24.137 14.967,24.137 ZM9.110,24.137 C8.571,24.137 8.134,23.705 8.134,23.171 L8.134,17.378 C8.134,16.845 8.571,16.412 9.110,16.412 C9.649,16.412 10.086,16.845 10.086,17.378 L10.086,23.171 C10.086,23.705 9.649,24.137 9.110,24.137 ZM20.823,16.412 C21.362,16.412 21.800,16.845 21.800,17.378 L21.800,23.171 C21.800,23.705 21.362,24.137 20.823,24.137 C20.284,24.137 19.847,23.705 19.847,23.171 L19.847,17.378 C19.847,16.845 20.284,16.412 20.823,16.412 Z"/>
+					</svg>
+					<span class="header-scroll__busket-count">0</span>
+				</div>
+			</div>
+		</header>
+
+
+		<div class="menu-wrapper" style="background-color: #5bdbe8;">
+			<div class="menu-box">
+				<nav>
+					<ul class="menu-header">
+						<li><a href="index.html">Главная</a></li>
+						<li class="menu-item-has-children menu-item-has-children-active">
+							<a href="#">Каталог</a>
+							<ul>
+								<li><a href="#">Coconut Charcoal Mint</a></li>
+								<li><a href="#">Coconut Pink Salt Lychee</a></li>
+								<li><a href="#">Coconut Spirulina Vanilla</a></li>
+								<li><a href="#">Coconut Matcha Lime</a></li>
+								<li><a href="#">Coconut Turmeric Orange</a></li>
+							</ul>
+						</li>
+						<li><a href="#">FAQ</a></li>
+					</ul>
+				</nav>
+				<ul class="menu-social">
+					<li><a href="#" target="_blank">
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="18" width="24" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 133.8 78.4" style="enable-background:new 0 0 133.8 78.4; fill: #fff;" xml:space="preserve">
+						<path d="M111.2,38.4c0,0,17.6-24.9,19.4-33.1c0.6-2.9-0.7-4.6-3.7-4.6c0,0-10.2,0-15.3,0c-3.5,0-4.8,1.5-5.8,3.7
+							c0,0-8.3,17.6-18.3,28.7c-3.2,3.6-4.9,4.7-6.7,4.7c-1.4,0-2.1-1.2-2.1-4.4V5.1c0-4-0.5-5.1-3.7-5.1L50.3,0c-1.9,0-3,1.1-3,2.6
+							c0,3.7,5.7,4.6,5.7,14.7v20.9c0,4.2-0.2,5.8-2.2,5.8C45.5,44,33.1,25.9,26,5.4C24.6,1.2,23.1,0,19.2,0L3.9,0C1.6,0,0,1.5,0,3.7
+							c0,4.1,4.8,23,23.6,48.4c12.6,17.1,29.2,26.3,44.1,26.3c9.1,0,11.3-1.5,11.3-5.4V59.9c0-3.3,1.3-4.7,3.2-4.7c2.1,0,5.8,0.7,14.5,9.2
+							c10.3,9.8,11,13.9,16.6,13.9l17.2,0c1.8,0,3.4-0.8,3.4-3.7c0-3.9-5-10.7-12.7-18.9c-3.2-4.2-8.3-8.8-9.9-10.9
+							C108.8,42.4,109.5,41,111.2,38.4L111.2,38.4z"/>
+						</svg>
+					</a></li>
+					<li><a href="#" target="_blank">
+						<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" height="18" width="24" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 105.7 226.2" style="enable-background:new 0 0 105.7 226.2; fill: #fff;" xml:space="preserve">
+						<path d="M23.4,169.4c0-17.7-0.1-35.4,0.1-53.1c0-3-0.8-3.9-3.8-3.8c-5.5,0.2-11,0-16.6,0.1
+							c-2.2,0.1-3.1-0.6-3-2.9c0.1-11,0.1-22.1,0-33.1c0-2.1,0.6-2.8,2.8-2.8c5.6,0.1,11.3-0.2,16.9,0.1c3.3,0.2,3.9-1,3.9-4
+							c-0.2-8.4-0.2-16.8,0-25.2c0.2-10.3,3-19.9,9.1-28.2C40.4,5.8,51.4,1,64.1,0.4c13-0.6,26.1-0.3,39.2-0.4c1.8,0,2.4,0.6,2.4,2.4
+							c-0.1,11.2-0.1,22.3,0,33.5c0,2-0.6,2.6-2.6,2.6c-6.3-0.1-12.6,0-18.8,0c-8.4,0-13.4,4.3-13.9,12.6c-0.4,6.6-0.1,13.3-0.3,20
+							c-0.1,2.4,1.4,2.2,2.9,2.2c9.5,0,19.1,0.1,28.6-0.1c2.8,0,3.7,0.6,3.4,3.5c-1.2,11.1-2.2,22.2-3.2,33.4c-0.2,2.5-1.4,3-3.6,3
+							c-7.5-0.1-15.1-0.1-22.6,0c-5.4,0-4.9-0.8-4.9,4.7c0,34.7-0.1,69.3,0.1,104c0,3.7-0.9,4.6-4.5,4.5c-12.9-0.2-25.9-0.3-38.8,0
+							c-3.6,0.1-4.2-1.2-4.2-4.4C23.4,204.3,23.4,186.8,23.4,169.4z"/>
+						</svg>
+					</a></li>
+				</ul>
+				<p class="menu__offer">Не знаешь как подобрать скраб?<br><a href="#" target="_blank">Написать в WhatsApp</a></p>
+				<ul class="menu-second">
+					<li><a href="#">Доставка</a></li>
+					<li><a href="#">Оплата</a></li>
+					<li><a href="#">Оптовые закупки</a></li>
+					<li><a href="#">О нас</a></li>
+				</ul>
+				<div class="work-time">Время работы: ежедневно<br>с 9:00 до 21:00</div>
+			</div>
+		</div>
+
+	
+		<main class="main" id="main">
+
+<section class="page-preview bg_pink">
+	<div class="container">
+		<div class="section-title">
+			<span class="section-title__icon">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+				viewBox="0 0 382 384" style="enable-background:new 0 0 382 384; fill: #fff;" xml:space="preserve">
+					<path  d="M0.7,276.5c0,0.1,0,0.2,0,0.3C22,364,91.2,383.2,116,383.3h0.1c14.7,0,19-5.2,20.1-9.5
+				c7.5-30.4,33.3-65.2,65.2-98.7c0.9-0.6,1.6-1.3,2.2-2.2c54.4-56.6,125.3-109,154.2-129.6c0.1-0.1,0.3-0.1,0.4-0.1
+				c4.8-2.1,9.1-5.2,12.7-9l0.1-0.1l0,0c0.9-0.7,1.7-1.6,2.1-2.6c4.3-5.4,7-11.8,8-18.5c4.8-35.7-27.8-67.8-37.8-76.8
+				c-8.5-7.9-17.8-14.9-27.8-20.7c-14.4-8.1-30.3-13-46.8-14.3c-10.2-0.8-29-2.3-40,15.7c-22.8,36.1-49.7,69.4-80.1,99.3
+				c-16.4,16.4-34.3,32.7-53.2,48.4c-20.2,16.6-41.3,32-63.2,46.2l-11.8,8c-4.4,3-6.6,8.2-5.8,13.5c2.5,14.2-0.4,31.6-10.9,37.6
+				c-0.1,0.1-0.2,0.2-0.4,0.3c-0.2,0.2-0.5,0.4-0.7,0.6c-0.4,0.3-0.8,0.7-1.1,1.2c-0.1,0.2-0.2,0.4-0.3,0.7c-0.4,0.7-0.6,1.5-0.6,2.3
+				C0.5,275.4,0.6,276,0.7,276.5L0.7,276.5z M256.1,64.4c0.9,3.3,2,6.5,3.3,9.7c6.3,14.7,14.9,28.3,25.5,40.3
+				c16,18.1,31.5,28.4,47.4,31.4c-18.7,13.7-43.9,32.9-70.3,55.2c-27.7-15.9-52.1-36.9-72-61.9c3-3.2,6.1-6.3,9-9.5
+				c13.2-14.1,25.8-29,38.1-43.3C243.3,79.1,249.7,71.7,256.1,64.4L256.1,64.4z M239.6,23.5c5.8-9.5,14.3-10.7,28.1-9.6
+				c14.6,1.2,28.8,5.5,41.5,12.7c9.2,5.4,17.7,11.8,25.5,19.1c8.9,7.9,37.6,36.2,33.7,65.6c-0.7,4.9-2.8,9.6-6.1,13.3
+				c-2,1.4-5.8,4-10.8,7.5c-4.3,1.7-8.9,2.3-13.5,1.8c-14.1-1.6-28.3-10.7-43.5-28c-9.7-10.9-17.6-23.4-23.3-36.8
+				c-2.7-5.1-3.8-11-3-16.8c0.4-1.4,1.1-2.8,2.1-3.8l0,0c4.5-3,10.2-3.6,15.3-1.8c12.6,3.6,24.1,10.6,33.1,20.1
+				c3.6,3.4,6.7,7.3,9.3,11.5c2,3,2.5,6.8,1.4,10.2c-0.8,1.6-2.6,2.4-4.3,1.9C314.7,86.8,306.5,79,302.4,69c-1.5-3.2-5.3-4.6-8.5-3.2
+				c-3.2,1.5-4.6,5.3-3.1,8.5c5.6,13.5,16.8,23.9,30.8,28.4c7.7,2.2,15.8-1.5,19.3-8.8c3-7.1,2.4-15.3-1.8-21.9
+				c-3.1-5.2-6.9-10-11.3-14.3c-10.7-11.3-24.2-19.4-39.1-23.6c-9.2-3-19.4-1.2-27,4.8c-0.1,0.1-0.2,0.1-0.3,0.2
+				c-0.1,0.1-0.2,0.2-0.3,0.4c-0.2,0.2-0.5,0.5-0.5,0.6l-0.1,0.1c-11.3,12.4-22.3,25.3-33,37.8c-12.2,14.2-24.7,29-37.7,42.9
+				c-2.5,2.7-5,5.3-7.5,7.9c-2.6-3.6-5.2-7.3-7.8-11.5c-1.2-1.9-2.4-3.8-3.6-5.8C196.6,84.6,219.7,55.1,239.6,23.5L239.6,23.5z
+				M157.6,125.1c1.4-1.4,2.6-2.7,4-4.1c0.7,1.1,1.3,2.2,2,3.3c4.4,6.8,8.6,12.8,12.8,18.3c20.6,27,46.1,49.7,75.3,67.2
+				c-18.7,16.1-37.6,33.6-55,51.7c-29-16.7-54.1-39.4-73.6-66.5c-5.6-7.8-10.6-15.9-15.2-24.3C125.5,155.8,142.2,140.6,157.6,125.1
+				L157.6,125.1z M160.9,252.7l-31.2,32.8c-0.2,0.3-0.6,0.4-0.9,0.3c-0.3-0.1-0.6-0.4-0.6-0.7l-1.8-7.6c-1.2-5.3-5.5-9.4-10.9-10.4
+				l-7.8-1.4c-0.3,0-0.5-0.2-0.6-0.5c-0.1-0.3,0-0.7,0.2-0.9l30.5-32.1C145.1,239.5,152.8,246.4,160.9,252.7L160.9,252.7z
+				M27.2,230.1c0-0.3,0.1-0.6,0.4-0.8l11.7-7.9c20.4-13.7,38.2-25.8,58.6-42.4c3.6,6.5,7.5,12.7,11.5,18.6
+				c-25.9,22.2-53.6,42.1-83,59.4C28.5,248.2,28.8,239,27.2,230.1L27.2,230.1z M116.9,208c3.9,5.1,7.9,10,12.1,14.8l-31,32.6
+				c-3.5,3.7-4.7,9-3.1,13.8c1.6,4.7,5.6,8.2,10.6,9.1l7.8,1.4c0.3,0.1,0.6,0.3,0.7,0.7l1.8,7.5c1.1,4.9,4.8,8.9,9.6,10.2
+				c4.9,1.4,10.1-0.1,13.6-3.8l32.2-33.9c5.3,3.8,10.8,7.2,16.4,10.5c-30.7,33.1-55.4,67.5-63.5,98.4c-3.6,1.5-17.3,2.2-35.6-4.6
+				C67.3,357,30,335.3,14.4,278.4C51,258.7,85.3,235.1,116.9,208L116.9,208z M116.9,208"/>
+				</svg>
+			</span>
+			<h4 class="section-title__text">Ваш заказ</h4>
+		</div>
+	</div>
+</section>
+
+<section class="busket-table-wrapper">
+	<div class="container">
+		<div class="busket-table-box">
+			<div class="busket-table">
+				<div class="busket-item">
+					<div class="busket-item__preview">
+						<img src="img/busket-item__preview_1.png" alt="">
+					</div>
+					<div class="busket-item__title">
+						<a href="product.html">Coconut Turmeric Orange</a>
+						<p>Скраб для тела с индийской куркумой и эфирным маслом апельсина</p>
+					</div>
+					<div class="busket-item__spinner">
+						<input type="number" class="circle-spinner-input" value="1" min="1" max="100" step="1">
+					</div>
+					<div class="busket-item__price">
+						<span class="busket-item__price-amount">990</span><span class="busket-item__price-currency">РУБ</span>
+					</div>
+					<div class="busket-item__delete">
+						<button type="button" class="product-delete">
+							<svg version="1.1" width="14" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 13.3 13.3" style="enable-background:new 0 0 13.3 13.3; fill:none;stroke:#26353A;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" xml:space="preserve">
+							<line x1="1" y1="1" x2="12.3" y2="12.3"/>
+							<line x1="1" y1="12.3" x2="12.3" y2="1"/>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="busket-item">
+					<div class="busket-item__preview">
+						<a href="product.html">
+							<img src="img/busket-item__preview_2.png" alt="">
+						</a>
+					</div>
+					<div class="busket-item__title">
+						<a href="product.html">Coconut Matcha Lime</a>
+						<p>Скраб для тела с японским чаем Матча и эфирным маслом лайма</p>
+					</div>
+					<div class="busket-item__spinner">
+						<input type="number" class="circle-spinner-input" value="1" min="1" max="100" step="1">
+					</div>
+					<div class="busket-item__price">
+						<span class="busket-item__price-amount">990</span><span class="busket-item__price-currency">РУБ</span>
+					</div>
+					<div class="busket-item__delete">
+						<button type="button" class="product-delete">
+							<svg version="1.1" width="14" height="14" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 13.3 13.3" style="enable-background:new 0 0 13.3 13.3; fill:none;stroke:#26353A;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" xml:space="preserve">
+							<line x1="1" y1="1" x2="12.3" y2="12.3"/>
+							<line x1="1" y1="12.3" x2="12.3" y2="1"/>
+							</svg>
+						</button>
+
+					</div>
+				</div>
+			</div>
+			<div class="busket-receipt-wrapper">
+				<div class="busket-receipt">
+					<p class="busket-receipt__title">ИТОГО</p>
+					<p class="busket-receipt__descr"><span class="busket-receipt__count">3</span> товара на сумму</p>
+					<p class="busket-receipt__price-old">2970 РУБ</p>
+					<p class="busket-receipt__price">1980 РУБ</p>
+					<p class="busket-receipt__action">Дополни корзину еще на <b>990</b> руб и получи <b>доставку бесплатно!</b></p>
+					<p class="busket-receipt__promocode">
+						<input type="text" class="input-promocode" placeholder="Промокод">
+						<button type="button" class="btn-ok__promocode">Ok</button>
+					</p>
+					<a href="order.html" class="btn-second" id="btn_issue">Оформить</a>
+				</div>
+				<button class="btn-busket__promocode">Промокод</button>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+<section class="product-carousel-wrapper">
+	<div class="container">
+		<div class="section-title">
+			<h4 class="section-title__text">ДЛЯ ДОСТИЖЕНИЯ МАКСИМАЛЬНОГО ЭФФЕКТА</h4>
+		</div>
+
+		<div class="product-carousel swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide product-carousel__item">
+					<a href="product.html" class="choose-for-yourself__title">COCONUT matcha lime</a>
+					<p class="choose-for-yourself__descr">Скраб для тела с японским чаем Матча и эфирным маслом лайма</p>
+					<a href="product.html" class="product-carousel__preview">
+						<img src="img/product-carousel_1.png" alt="">
+						<p class="product-carousel__price">990 <span class="product-carousel__currency">руб</span></p>
+					</a>
+					<form action="" class="product-carousel_from-add">
+						<button type="submit" class="btn-second">ДОБАВИТЬ В КОРЗИНУ</button>
+					</form>
+				</div>
+				<div class="swiper-slide product-carousel__item">
+					<a href="product.html" class="choose-for-yourself__title">COCONUT TURMERIC ORANGE</a>
+					<p class="choose-for-yourself__descr">Скраб для тела с индийской куркумой и эфирным маслом апельсина </p>
+					<a href="product.html" class="product-carousel__preview">
+						<img src="img/product-carousel_2.png" alt="">
+						<p class="product-carousel__price">990 <span class="product-carousel__currency">руб</span></p>
+					</a>
+					<form action="" class="product-carousel_from-add">
+						<button type="submit" class="btn-second">ДОБАВИТЬ В КОРЗИНУ</button>
+					</form>
+				</div>
+				<div class="swiper-slide product-carousel__item">
+					<a href="product.html" class="choose-for-yourself__title">COCONUT PINK SALT LYCHEE</a>
+					<p class="choose-for-yourself__descr">Скраб для тела с гималайской солью и эфирным маслом личи</p>
+					<a href="product.html" class="product-carousel__preview">
+						<img src="img/product-carousel_3.png" alt="">
+						<p class="product-carousel__price">990 <span class="product-carousel__currency">руб</span></p>
+					</a>
+					<form action="" class="product-carousel_from-add">
+						<button type="submit" class="btn-second">ДОБАВИТЬ В КОРЗИНУ</button>
+					</form>
+				</div>
+				<div class="swiper-slide product-carousel__item">
+					<a href="product.html" class="choose-for-yourself__title">COCONUT TURMERIC ORANGE</a>
+					<p class="choose-for-yourself__descr">Скраб для тела с индийской куркумой и эфирным маслом апельсина </p>
+					<a href="product.html" class="product-carousel__preview">
+						<img src="img/product-carousel_1.png" alt="">
+						<p class="product-carousel__price">990 <span class="product-carousel__currency">руб</span></p>
+					</a>
+					<form action="" class="product-carousel_from-add">
+						<button type="submit" class="btn-second">ДОБАВИТЬ В КОРЗИНУ</button>
+					</form>
+				</div>
+			</div>
+			<div class="product-carousel__next">
+				<svg version="1.1" width="21" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 190 358" style="enable-background:new 0 0 190 358;" xml:space="preserve">
+					<path d="M186.5,171.8L17.7,3c-4-4-10.3-4-14.3,0c-4,4-4,10.4,0,14.3L165,178.9L3.4,340.6c-4,4-4,10.4,0,14.3 c1.9,1.9,4.6,3,7.1,3c2.6,0,5.2-1,7.1-3l168.8-168.8C190.4,182.2,190.4,175.7,186.5,171.8L186.5,171.8z M186.5,171.8"/>
+				</svg>
+			</div>
+			<div class="product-carousel__prev">
+				<svg version="1.1" width="21" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 190 358" style="enable-background:new 0 0 190 358; transform: rotate(180deg);" xml:space="preserve">
+					<path d="M186.5,171.8L17.7,3c-4-4-10.3-4-14.3,0c-4,4-4,10.4,0,14.3L165,178.9L3.4,340.6c-4,4-4,10.4,0,14.3 c1.9,1.9,4.6,3,7.1,3c2.6,0,5.2-1,7.1-3l168.8-168.8C190.4,182.2,190.4,175.7,186.5,171.8L186.5,171.8z M186.5,171.8"/>
+				</svg>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+		</main>
+
+		<footer id="footer" class="footer">
+			<div class="container footer-container">
+				<div class="footer-box">
+					<h3 class="footer-box__title">Страницы</h3>	
+					<ul class="footer-menu">
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="catalog.html">Каталог</a></li>
+						<li><a href="faq.html">FAQ</a></li>
+					</ul>
+					<ul class="footer-menu">
+						<li><a href="#">Cертификаты</a></li>
+						<li><a href="#">Политика конфиденциальности</a></li>
+					</ul>
+				</div>
+				<div class="footer-box footer-box__contact">
+					<h3 class="footer-box__title">Контакты:</h3>
+					<ul class="menu-icons">
+						<li><a href="#">
+							<img src="img/icons/mail.png" alt="">
+							<span class="menu-icons__text">Написать на Mail</span>
+						</a></li>
+						<li><a href="#">
+							<img src="img/icons/telegram.png" alt="">
+							<span class="menu-icons__text">Написать в Telegram</span>
+						</a></li>
+						<li><a href="#">
+							<img src="img/icons/whatsapp.png" alt=""></a>
+							<span class="menu-icons__text">Написать в WhatsApp</span>
+						</li>
+					</ul>
+				</div>
+				<div class="footer-box footer-box__soc">
+					<h3 class="footer-box__title">Мы в соцсетях:</h3>
+					<ul class="menu-icons">
+						<li><a href="#">
+							<img src="img/icons/instagram.png" alt="">
+							<u class="menu-icons__text">Написать в Instagram</u>
+						</a></li>
+						<li><a href="#">
+							<img src="img/icons/vk.png" alt="">
+							<u class="menu-icons__text">Написать в VK</u>
+						</a></li>
+						<li><a href="#">
+							<img src="img/icons/facebook.png" alt=""></a>
+							<u class="menu-icons__text">Написать в Facebook</u>
+						</li>
+					</ul>
+				</div>
+				<div class="footer-box footer-box__pay">
+					<h3 class="footer-box__title">Способы оплаты:</h3>
+					<ul class="menu-icons">
+						<li><a href="#">
+							<img src="img/icons/qiwi.png" alt=""></a>
+						</li>
+						<li><a href="#">
+							<img src="img/icons/yandex.png" alt=""></a>
+						</li>
+						<li><a href="#">
+							<img src="img/icons/sber.png" alt=""></a>
+						</li>
+						<li><a href="#">
+							<img src="img/icons/google.png" alt=""></a>
+						</li>
+						<li><a href="#">
+							<img src="img/icons/apple.png" alt=""></a>
+						</li>
+						<li><a href="#">
+							<img src="img/icons/maestro.png" alt=""></a>
+						</li>
+						<li><a href="#">
+							<img src="img/icons/mastercard.png" alt="">
+						</a></li>
+						<li><a href="#">
+							<img src="img/icons/visa-1.png" alt="">
+						</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-pattern"></div>
+		</footer>
+
+
+
+<div class="pop-up_busket">
+	<div class="pop-up_busket-container">
+		<div class="pop-up_busket__header">
+			<div class="pop-up_busket-product">
+				<div class="pop-up_busket__preview">
+					<a href="product.html"><img src="img/pop-up_busket__preview_1.png" alt=""></a>
+				</div>
+				<div class="pop-up_busket__info">
+					<a href="#" class="pop-up_busket__title">Coconut Turmeric Orange</a>
+					<p class="pop-up_busket__description">Скраб для тела с индийской куркумой и эфирным маслом апельсина</p>
+					<div class="pop-up_busket__spinner">
+						<input type="number" class="circle-spinner-input" value="1" min="1" max="100" step="1">
+					</div>
+					<div class="pop-up_busket__amount">
+						<span class="pop-up_busket__count">1</span>&nbsp;x&nbsp;990<span class="pop-up_busket__currency">руб</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pop-up_busket__content">
+			<h3 class="content-title">ВЫ ВЫБРАЛИ ЭФФЕКТИВНЫЙ КОМПЛЕКС ИЗ ТРЕХ СКРАБОВ ПО АКЦИИ 1+1=3</h3>
+			<div class="pop-up_busket-products">
+				<div class="pop-up_busket-product">
+					<div class="pop-up_busket__preview">
+						<a href="product.html"><img src="img/pop-up_busket__preview_2.png" alt=""></a>
+					</div>
+					<div class="pop-up_busket__info">
+						<a href="#" class="pop-up_busket__title">Coconut Matcha Lime</a>
+						<p class="pop-up_busket__description">Скраб для тела с японским чаем Матча и эфирным маслом лайма</p>
+						<div class="pop-up_busket__spinner">
+							<input type="number" class="circle-spinner-input" value="1" min="1" max="100" step="1">
+						</div>
+						<div class="pop-up_busket__amount">
+							<span class="pop-up_busket__count">1</span>&nbsp;x&nbsp;990<span class="pop-up_busket__currency">руб</span>
+						</div>
+					</div>
+				</div>
+				<div class="pop-up_busket-product">
+					<div class="pop-up_busket__preview">
+						<a href="product.html"><img src="img/pop-up_busket__preview_3.png" alt=""></a>
+					</div>
+					<div class="pop-up_busket__info">
+						<a href="#" class="pop-up_busket__title">Coconut Spirulina Vanilla</a>
+						<p class="pop-up_busket__description">Скраб для тела с голубой спирулиной и эфирным маслом ванили</p>
+						<div class="pop-up_busket__spinner">
+							<input type="number" class="circle-spinner-input" value="1" min="1" max="100" step="1">
+						</div>
+						<div class="pop-up_busket__amount">
+							<span class="pop-up_busket__count">1</span>&nbsp;x&nbsp;990<span class="pop-up_busket__currency">руб</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pop-up_busket-total">
+			<p class="pop-up_busket-total__title">ОБЩАЯ СУММА</p>
+			<p><del class="pop-up_busket-total__old-price">2970 РУБ</del> <span class="pop-up_busket-total__amount">2970 РУБ</span></p>
+		</div>
+		
+		<a href="busket.html" class="btn-second" id="btn__busket-checkout">Оформить</a>
+
+		<div class="pop-up_busket-action">
+			<svg version="1.1" width="37" height="19" fill="#133238"
+				 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36.4 18.2"
+				 style="enable-background:new 0 0 36.4 18.2;" xml:space="preserve">
+				<path d="M6.4,1.1C6.6,0.2,6.9,0,7.9,0C14,0,20.2,0,26.3,0c1,0,1.3,0.3,1.2,1.3c-0.1,0.8-0.1,1.7-0.2,2.6H29
+					c0.7,0,1.4,0,2,0c0.7,0,1.3,0.3,1.8,0.8c1,1,1.9,2.1,2.9,3.1c0.5,0.5,0.7,1.1,0.7,1.8c-0.1,1.6-0.3,3.2-0.4,4.8
+					c-0.1,0.7-0.6,1-1.4,0.9c-0.3-2.2-1.3-3.4-3-3.5c-1.1-0.1-2,0.2-2.8,0.9c-0.7,0.6-0.8,0.8-1.5,2.6H15.8c0-1.1-0.3-2.1-1.1-2.8
+					c-0.6-0.5-1.4-0.8-2.2-0.8c-1.9,0-3.5,1.4-3.9,3.6c-0.9,0-1.8,0-2.6,0c-0.4,0-0.6-0.4-0.6-0.8c0.1-1.4,0.2-2.7,0.3-4.1
+					c0-0.1,0.2-0.2,0.4-0.2c0.9,0,1.7,0,2.6,0c0.1,0,0.3,0,0.4,0c0.3-0.1,0.5-0.3,0.5-0.6c0-0.4-0.2-0.5-0.6-0.5c-1.6,0-3.1,0-4.7,0
+					c-1.1,0-2.3,0-3.4,0C0.3,9.1,0,8.9,0,8.5c0-0.4,0.3-0.6,0.8-0.6c3.6,0,7.2,0,10.8,0c0.3,0,0.5,0,0.8,0c0.5,0,0.7-0.2,0.7-0.6
+					c0-0.5-0.3-0.5-0.7-0.5c-2.1,0-4.2,0-6.3,0c-1,0-2.1,0-3.1,0c-0.6,0-0.8-0.1-0.8-0.5c0-0.4,0.3-0.6,0.8-0.6c2.3,0,4.6,0,6.9,0
+					c0.1,0,0.3,0,0.4,0c0.4,0,0.7-0.3,0.7-0.6c0-0.4-0.3-0.5-0.7-0.5c-1.2,0-2.4,0-3.6,0H1.8C1.3,4.5,1,4.4,1,4c0-0.4,0.3-0.6,0.8-0.6
+					c3.2,0,6.4,0,9.7,0c0.2,0,0.3,0,0.5,0c0.4,0,0.6-0.2,0.6-0.6c0-0.4-0.3-0.5-0.7-0.5c-2.1,0-4.2,0-6.3,0c-0.6,0-1.1,0-1.7,0
+					c-0.4,0-0.7-0.1-0.7-0.5c0-0.4,0.3-0.6,0.7-0.6C4.8,1.1,5.6,1.1,6.4,1.1 M34.6,8.1c-1-1-1.9-2-2.8-3c-0.2-0.2-0.4-0.3-0.6-0.3
+					c-1,0-2,0-3,0C28.1,5.9,28,7,27.9,8.1H34.6z"/>
+				<path d="M15,15.1c0,1.7-1.5,3.1-3.1,3.1c-1.5,0-2.6-1.2-2.6-2.6c0-1.7,1.5-3.1,3.1-3.1C13.9,12.5,15,13.6,15,15.1"/>
+				<path d="M33.7,15.1c0,1.7-1.5,3.1-3.1,3.1c-1.5,0-2.6-1.1-2.6-2.6c0-1.7,1.4-3.1,3.1-3.1
+					C32.6,12.4,33.7,13.6,33.7,15.1"/>
+			</g>
+			</svg>
+			<span>До бесплатной доставки осталось 990 руб</span>
+		</div>
+	</div>
+</div>
+
+		
+		<script src="js/scripts.min.js"></script>
+		<script src="js/scripts.custom.js"></script>
+	</div>
+</body>
+</html>

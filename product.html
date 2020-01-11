@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Start</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" /> 
+	<link rel="stylesheet" href="css/styles.min.css">
+
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=8b4980b1-0f79-491d-b797-78aaf81d44c1" type="text/javascript"></script>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+	
+
+    
+</head>
+<body>
+	<div class="page">
+		<!-- DELETDELETDELETDELETDELETDELETDELETDELETDELETDELET -->
+		<div id="width-height" style="position: fixed; bottom: 50px; right: 50px; z-index: 99999;">
+			<script>
+				var w = window.innerWidth
+				|| document.documentElement.clientWidth
+				|| document.body.clientWidth;
+
+				var h = window.innerHeight
+				|| document.documentElement.clientHeight
+				|| document.body.clientHeight;
+
+				var x = document.getElementById("width-height");
+				x.innerHTML = w + "x" + h;
+			</script>
+		</div>
+		<!-- DELETDELETDELETDELETDELETDELETDELETDELETDELETDELET -->
+
+		
+
+		<header id="header-scroll" class="header-scroll" style="background-color: #ff9ac7">  <!-- #5bdbe8; -->
+			<div class="header-scroll-container">
+				<div class="header-scroll__btn-menu">
+					<button class="hamburger hamburger--collapse" type="button">
+					  <span class="hamburger-box">
+					    <span class="hamburger-inner"></span>
+					  </span>
+					</button>
+				</div>
+				<div class="header-scroll__logotype">
+					<a href="index.html">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="204px" height="28px">
+						<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+						 d="M204.004,21.906 L204.004,27.321 L185.347,27.321 L185.347,0.680 L203.328,0.680 L203.328,6.096 L191.180,6.096 L191.180,11.064 L202.658,11.064 L202.658,16.485 L191.180,16.485 L191.180,21.906 L204.004,21.906 ZM179.308,25.704 C178.362,26.281 177.297,26.695 176.113,26.945 C174.929,27.196 173.750,27.321 172.577,27.321 L161.738,27.321 L161.738,0.680 L171.604,0.680 C172.750,0.680 173.907,0.763 175.064,0.920 C176.221,1.089 177.264,1.415 178.183,1.900 C179.108,2.389 179.854,3.075 180.427,3.951 C181.000,4.827 181.287,5.998 181.287,7.451 C181.287,8.958 180.870,10.205 180.038,11.196 C179.200,12.191 178.097,12.898 176.729,13.323 L176.729,13.400 C177.599,13.525 178.394,13.769 179.102,14.134 C179.811,14.499 180.422,14.961 180.935,15.527 C181.443,16.088 181.838,16.747 182.108,17.503 C182.384,18.254 182.524,19.054 182.524,19.909 C182.524,21.313 182.222,22.488 181.627,23.430 C181.027,24.366 180.254,25.128 179.308,25.704 ZM175.102,7.059 C174.864,6.695 174.561,6.412 174.188,6.210 C173.810,6.009 173.388,5.868 172.912,5.780 C172.442,5.688 171.977,5.644 171.534,5.644 L167.571,5.644 L167.571,11.326 L171.793,11.326 C172.242,11.326 172.685,11.277 173.123,11.179 C173.556,11.076 173.950,10.912 174.296,10.689 C174.648,10.466 174.929,10.161 175.140,9.786 C175.350,9.410 175.459,8.958 175.459,8.430 C175.459,7.881 175.340,7.423 175.102,7.059 ZM176.221,17.710 C175.913,17.318 175.518,17.024 175.048,16.823 C174.572,16.621 174.058,16.485 173.512,16.409 C172.966,16.333 172.453,16.301 171.977,16.301 L167.571,16.301 L167.571,22.352 L172.804,22.352 C173.247,22.352 173.707,22.303 174.166,22.205 C174.626,22.107 175.048,21.927 175.421,21.677 C175.794,21.426 176.097,21.100 176.334,20.697 C176.572,20.295 176.691,19.811 176.691,19.234 C176.691,18.602 176.534,18.096 176.221,17.710 ZM150.222,21.677 L139.939,21.677 L137.734,27.321 L131.306,27.321 L142.745,0.680 L147.568,0.680 L159.083,27.321 L152.503,27.321 L150.222,21.677 ZM144.989,8.430 L141.772,16.708 L148.244,16.708 L144.989,8.430 ZM127.381,25.704 C126.435,26.281 125.370,26.695 124.186,26.945 C123.002,27.196 121.823,27.321 120.650,27.321 L109.810,27.321 L109.810,0.680 L119.682,0.680 C120.828,0.680 121.980,0.763 123.137,0.920 C124.299,1.089 125.337,1.415 126.262,1.900 C127.181,2.389 127.927,3.075 128.505,3.951 C129.073,4.827 129.365,5.998 129.365,7.451 C129.365,8.958 128.943,10.205 128.110,11.196 C127.273,12.191 126.170,12.898 124.802,13.323 L124.802,13.400 C125.672,13.525 126.467,13.769 127.175,14.134 C127.889,14.499 128.494,14.961 129.008,15.527 C129.516,16.088 129.911,16.747 130.186,17.503 C130.457,18.254 130.598,19.054 130.598,19.909 C130.598,21.313 130.295,22.488 129.700,23.430 C129.100,24.371 128.327,25.128 127.381,25.704 ZM123.175,7.059 C122.937,6.695 122.634,6.412 122.261,6.210 C121.882,6.009 121.461,5.868 120.991,5.780 C120.515,5.688 120.055,5.644 119.607,5.644 L115.644,5.644 L115.644,11.326 L119.866,11.326 C120.315,11.326 120.758,11.277 121.196,11.179 C121.628,11.076 122.023,10.912 122.369,10.689 C122.721,10.466 123.002,10.161 123.212,9.786 C123.423,9.410 123.531,8.958 123.531,8.430 C123.531,7.881 123.413,7.423 123.175,7.059 ZM124.299,17.710 C123.986,17.318 123.591,17.024 123.121,16.823 C122.645,16.621 122.137,16.485 121.585,16.409 C121.039,16.333 120.526,16.301 120.055,16.301 L115.644,16.301 L115.644,22.352 L120.877,22.352 C121.326,22.352 121.780,22.303 122.239,22.205 C122.704,22.107 123.121,21.927 123.494,21.677 C123.867,21.426 124.169,21.100 124.407,20.697 C124.645,20.295 124.764,19.811 124.764,19.234 C124.764,18.602 124.607,18.096 124.299,17.710 ZM102.858,24.218 C101.587,25.438 100.079,26.369 98.338,27.022 C96.592,27.674 94.684,28.001 92.618,28.001 C90.548,28.001 88.639,27.674 86.899,27.022 C85.152,26.369 83.644,25.438 82.374,24.218 C81.103,23.000 80.114,21.530 79.400,19.794 C78.692,18.064 78.335,16.131 78.335,13.997 C78.335,11.870 78.692,9.933 79.400,8.207 C80.114,6.477 81.103,5.002 82.374,3.783 C83.644,2.563 85.152,1.633 86.899,0.980 C88.639,0.327 90.548,-0.000 92.618,-0.000 C94.684,-0.000 96.592,0.327 98.338,0.980 C100.079,1.633 101.587,2.563 102.858,3.783 C104.134,5.002 105.123,6.477 105.831,8.207 C106.540,9.933 106.896,11.870 106.896,13.997 C106.896,16.131 106.540,18.064 105.831,19.794 C105.123,21.530 104.134,23.000 102.858,24.218 ZM100.263,10.574 C99.874,9.524 99.322,8.616 98.598,7.848 C97.873,7.081 97.008,6.488 95.997,6.057 C94.992,5.633 93.862,5.421 92.618,5.421 C91.370,5.421 90.245,5.633 89.234,6.057 C88.223,6.488 87.358,7.081 86.634,7.848 C85.915,8.616 85.358,9.524 84.969,10.574 C84.585,11.631 84.390,12.774 84.390,13.997 C84.390,15.255 84.585,16.403 84.969,17.443 C85.358,18.488 85.915,19.386 86.634,20.153 C87.358,20.921 88.223,21.514 89.234,21.944 C90.245,22.368 91.370,22.581 92.618,22.581 C93.862,22.581 94.992,22.368 95.997,21.944 C97.008,21.514 97.873,20.921 98.598,20.153 C99.322,19.386 99.874,18.488 100.263,17.443 C100.647,16.403 100.841,15.255 100.841,13.997 C100.841,12.774 100.647,11.631 100.263,10.574 ZM71.442,5.981 C70.610,5.606 69.642,5.421 68.544,5.421 C67.447,5.421 66.436,5.633 65.501,6.057 C64.565,6.488 63.754,7.081 63.068,7.848 C62.381,8.616 61.846,9.524 61.462,10.574 C61.073,11.631 60.884,12.774 60.884,13.997 C60.884,15.255 61.073,16.403 61.462,17.443 C61.846,18.488 62.376,19.386 63.052,20.153 C63.722,20.921 64.517,21.514 65.425,21.944 C66.333,22.368 67.312,22.581 68.361,22.581 C69.555,22.581 70.615,22.331 71.534,21.829 C72.459,21.329 73.221,20.627 73.815,19.718 L78.676,23.369 C77.557,24.954 76.135,26.118 74.416,26.869 C72.696,27.626 70.928,28.001 69.106,28.001 C67.036,28.001 65.133,27.674 63.387,27.022 C61.641,26.369 60.132,25.438 58.862,24.218 C57.591,23.000 56.602,21.530 55.894,19.794 C55.180,18.064 54.829,16.131 54.829,13.997 C54.829,11.870 55.180,9.933 55.894,8.207 C56.602,6.477 57.591,5.002 58.862,3.783 C60.132,2.563 61.641,1.633 63.387,0.980 C65.133,0.327 67.036,-0.000 69.106,-0.000 C69.853,-0.000 70.631,0.071 71.442,0.207 C72.253,0.349 73.053,0.566 73.837,0.866 C74.621,1.170 75.372,1.568 76.097,2.073 C76.821,2.569 77.470,3.189 78.043,3.914 L73.556,7.603 C72.983,6.902 72.280,6.362 71.442,5.981 ZM48.611,24.218 C47.341,25.438 45.833,26.369 44.092,27.022 C42.346,27.674 40.437,28.001 38.372,28.001 C36.302,28.001 34.393,27.674 32.652,27.022 C30.906,26.369 29.398,25.438 28.127,24.218 C26.857,23.000 25.867,21.530 25.156,19.794 C24.446,18.064 24.091,16.131 24.091,13.997 C24.091,11.870 24.446,9.933 25.156,8.207 C25.867,6.477 26.857,5.002 28.127,3.783 C29.398,2.563 30.906,1.633 32.652,0.980 C34.393,0.327 36.302,-0.000 38.372,-0.000 C40.437,-0.000 42.346,0.327 44.092,0.980 C45.833,1.633 47.341,2.563 48.611,3.783 C49.887,5.002 50.877,6.477 51.585,8.207 C52.299,9.933 52.650,11.870 52.650,13.997 C52.650,16.131 52.299,18.064 51.585,19.794 C50.877,21.530 49.887,23.000 48.611,24.218 ZM43.897,3.576 C39.983,0.316 33.744,1.323 29.668,6.275 C25.597,11.222 25.770,17.585 29.684,20.850 C30.052,21.154 30.446,21.416 30.857,21.650 C30.863,21.655 30.868,21.661 30.873,21.666 C30.911,21.682 30.938,21.699 30.971,21.716 C31.095,21.786 31.214,21.857 31.344,21.922 C38.572,25.552 44.632,17.443 45.189,16.518 C47.979,11.843 47.374,6.477 43.897,3.576 ZM40.762,7.081 C35.707,7.081 31.944,11.043 31.944,15.887 C31.944,16.725 32.058,17.536 32.268,18.308 C30.993,16.947 30.225,15.103 30.225,13.067 C30.225,8.958 33.420,5.595 37.702,5.595 C39.534,5.595 41.167,6.210 42.432,7.233 C41.897,7.135 41.335,7.081 40.762,7.081 ZM8.227,20.153 C8.902,20.921 9.692,21.514 10.600,21.944 C11.511,22.368 12.492,22.581 13.536,22.581 C14.733,22.581 15.793,22.331 16.715,21.829 C17.636,21.329 18.396,20.627 18.996,19.718 L23.856,23.369 C22.732,24.954 21.315,26.118 19.593,26.869 C17.872,27.626 16.104,28.001 14.284,28.001 C12.217,28.001 10.308,27.674 8.565,27.022 C6.821,26.369 5.313,25.438 4.042,24.218 C2.772,23.000 1.780,21.530 1.069,19.794 C0.361,18.064 0.004,16.131 0.004,13.997 C0.004,11.870 0.361,9.933 1.069,8.207 C1.780,6.477 2.772,5.002 4.042,3.783 C5.313,2.563 6.821,1.633 8.565,0.980 C10.308,0.327 12.217,-0.000 14.284,-0.000 C15.033,-0.000 15.812,0.071 16.620,0.207 C17.431,0.349 18.228,0.566 19.012,0.866 C19.799,1.170 20.553,1.568 21.277,2.073 C21.996,2.569 22.645,3.189 23.218,3.914 L18.731,7.603 C18.161,6.902 17.455,6.362 16.620,5.981 C15.785,5.606 14.820,5.421 13.725,5.421 C12.627,5.421 11.611,5.633 10.676,6.057 C9.741,6.488 8.935,7.081 8.248,7.848 C7.562,8.616 7.027,9.524 6.640,10.574 C6.253,11.631 6.059,12.774 6.059,13.997 C6.059,15.255 6.253,16.403 6.640,17.443 C7.027,18.488 7.556,19.386 8.227,20.153 Z"/>
+						</svg>
+					</a>
+				</div>
+				<div class="header-scroll__btn-busket">
+					<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="28px" fill="#fff">
+					<path fill-rule="evenodd" d="M27.853,14.473 L26.259,25.512 C26.054,26.930 24.808,27.999 23.360,27.999 L6.860,27.999 C5.422,27.999 4.207,26.980 3.971,25.578 L2.100,14.475 C0.927,14.385 -0.000,13.412 -0.000,12.229 L-0.000,10.941 C-0.000,9.699 1.022,8.689 2.277,8.689 L3.829,8.689 C3.841,8.675 3.852,8.663 3.865,8.650 L12.324,0.282 C12.706,-0.095 13.324,-0.095 13.705,0.282 C14.086,0.659 14.086,1.270 13.705,1.647 L6.586,8.689 L23.347,8.689 L16.229,1.647 C15.848,1.270 15.848,0.659 16.229,0.282 C16.610,-0.095 17.228,-0.095 17.609,0.282 L26.069,8.650 C26.081,8.662 26.093,8.675 26.104,8.689 L27.656,8.689 C28.912,8.689 29.934,9.699 29.934,10.941 L29.934,12.229 C29.934,13.406 29.017,14.374 27.853,14.473 ZM27.981,10.941 C27.981,10.764 27.836,10.619 27.656,10.619 L2.277,10.619 C2.098,10.619 1.952,10.764 1.952,10.941 L1.952,12.229 C1.952,12.406 2.098,12.551 2.277,12.551 C2.576,12.551 11.610,12.551 12.038,12.551 C12.578,12.551 13.015,12.983 13.015,13.517 C13.015,14.049 12.578,14.482 12.038,14.482 L4.081,14.482 L5.897,25.261 C5.976,25.728 6.380,26.068 6.860,26.068 L23.360,26.068 C23.843,26.068 24.258,25.711 24.326,25.239 L25.880,14.482 L17.895,14.482 C17.356,14.482 16.919,14.049 16.919,13.517 C16.919,12.983 17.356,12.551 17.895,12.551 C18.323,12.551 27.356,12.551 27.656,12.551 C27.835,12.551 27.981,12.406 27.981,12.229 L27.981,10.941 ZM14.967,24.137 C14.428,24.137 13.991,23.705 13.991,23.171 L13.991,17.378 C13.991,16.845 14.428,16.412 14.967,16.412 C15.506,16.412 15.943,16.845 15.943,17.378 L15.943,23.171 C15.943,23.705 15.506,24.137 14.967,24.137 ZM9.110,24.137 C8.571,24.137 8.134,23.705 8.134,23.171 L8.134,17.378 C8.134,16.845 8.571,16.412 9.110,16.412 C9.649,16.412 10.086,16.845 10.086,17.378 L10.086,23.171 C10.086,23.705 9.649,24.137 9.110,24.137 ZM20.823,16.412 C21.362,16.412 21.800,16.845 21.800,17.378 L21.800,23.171 C21.800,23.705 21.362,24.137 20.823,24.137 C20.284,24.137 19.847,23.705 19.847,23.171 L19.847,17.378 C19.847,16.845 20.284,16.412 20.823,16.412 Z"/>
+					</svg>
+					<span class="header-scroll__busket-count">0</span>
+				</div>
+			</div>
+		</header>
+
+
+		<div class="menu-wrapper" style="background-color: #5bdbe8;">
+			<div class="menu-box">
+				<nav>
+					<ul class="menu-header">
+						<li><a href="index.html">Главная</a></li>
+						<li class="menu-item-has-children menu-item-has-children-active">
+							<a href="#">Каталог</a>
+							<ul>
+								<li><a href="#">Coconut Charcoal Mint</a></li>
+								<li><a href="#">Coconut Pink Salt Lychee</a></li>
+								<li><a href="#">Coconut Spirulina Vanilla</a></li>
+								<li><a href="#">Coconut Matcha Lime</a></li>
+								<li><a href="#">Coconut Turmeric Orange</a></li>
+							</ul>
+						</li>
+						<li><a href="#">FAQ</a></li>
+					</ul>
+				</nav>
+				<ul class="menu-social">
+					<li><a href="#" target="_blank">
+						<svg version="1.1" xmlns="http://www.w3.org/2000/svg" height="18" width="24" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 133.8 78.4" style="enable-background:new 0 0 133.8 78.4; fill: #fff;" xml:space="preserve">
+						<path d="M111.2,38.4c0,0,17.6-24.9,19.4-33.1c0.6-2.9-0.7-4.6-3.7-4.6c0,0-10.2,0-15.3,0c-3.5,0-4.8,1.5-5.8,3.7
+							c0,0-8.3,17.6-18.3,28.7c-3.2,3.6-4.9,4.7-6.7,4.7c-1.4,0-2.1-1.2-2.1-4.4V5.1c0-4-0.5-5.1-3.7-5.1L50.3,0c-1.9,0-3,1.1-3,2.6
+							c0,3.7,5.7,4.6,5.7,14.7v20.9c0,4.2-0.2,5.8-2.2,5.8C45.5,44,33.1,25.9,26,5.4C24.6,1.2,23.1,0,19.2,0L3.9,0C1.6,0,0,1.5,0,3.7
+							c0,4.1,4.8,23,23.6,48.4c12.6,17.1,29.2,26.3,44.1,26.3c9.1,0,11.3-1.5,11.3-5.4V59.9c0-3.3,1.3-4.7,3.2-4.7c2.1,0,5.8,0.7,14.5,9.2
+							c10.3,9.8,11,13.9,16.6,13.9l17.2,0c1.8,0,3.4-0.8,3.4-3.7c0-3.9-5-10.7-12.7-18.9c-3.2-4.2-8.3-8.8-9.9-10.9
+							C108.8,42.4,109.5,41,111.2,38.4L111.2,38.4z"/>
+						</svg>
+					</a></li>
+					<li><a href="#" target="_blank">
+						<svg version="1.1"  xmlns="http://www.w3.org/2000/svg" height="18" width="24" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 105.7 226.2" style="enable-background:new 0 0 105.7 226.2; fill: #fff;" xml:space="preserve">
+						<path d="M23.4,169.4c0-17.7-0.1-35.4,0.1-53.1c0-3-0.8-3.9-3.8-3.8c-5.5,0.2-11,0-16.6,0.1
+							c-2.2,0.1-3.1-0.6-3-2.9c0.1-11,0.1-22.1,0-33.1c0-2.1,0.6-2.8,2.8-2.8c5.6,0.1,11.3-0.2,16.9,0.1c3.3,0.2,3.9-1,3.9-4
+							c-0.2-8.4-0.2-16.8,0-25.2c0.2-10.3,3-19.9,9.1-28.2C40.4,5.8,51.4,1,64.1,0.4c13-0.6,26.1-0.3,39.2-0.4c1.8,0,2.4,0.6,2.4,2.4
+							c-0.1,11.2-0.1,22.3,0,33.5c0,2-0.6,2.6-2.6,2.6c-6.3-0.1-12.6,0-18.8,0c-8.4,0-13.4,4.3-13.9,12.6c-0.4,6.6-0.1,13.3-0.3,20
+							c-0.1,2.4,1.4,2.2,2.9,2.2c9.5,0,19.1,0.1,28.6-0.1c2.8,0,3.7,0.6,3.4,3.5c-1.2,11.1-2.2,22.2-3.2,33.4c-0.2,2.5-1.4,3-3.6,3
+							c-7.5-0.1-15.1-0.1-22.6,0c-5.4,0-4.9-0.8-4.9,4.7c0,34.7-0.1,69.3,0.1,104c0,3.7-0.9,4.6-4.5,4.5c-12.9-0.2-25.9-0.3-38.8,0
+							c-3.6,0.1-4.2-1.2-4.2-4.4C23.4,204.3,23.4,186.8,23.4,169.4z"/>
+						</svg>
+					</a></li>
+				</ul>
+				<p class="menu__offer">Не знаешь как подобрать скраб?<br><a href="#" target="_blank">Написать в WhatsApp</a></p>
+				<ul class="menu-second">
+					<li><a href="#">Доставка</a></li>
+					<li><a href="#">Оплата</a></li>
+					<li><a href="#">Оптовые закупки</a></li>
+					<li><a href="#">О нас</a></li>
+				</ul>
+				<div class="work-time">Время работы: ежедневно<br>с 9:00 до 21:00</div>
+			</div>
+		</div>
+
+	
+		<main class="main" id="main">
+
+
+<section class="product-preview" style="background-color: #5bdbe8;">
+	<div class="product-container">
+		<div class="product-container__left">
+			<div class="product-gallery swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<div class="swiper-slide__box">
+							<img src="img/product_preview.png" alt="">	
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="swiper-slide__box">
+							<img src="img/product_preview_2.png" alt="">	
+						</div>
+					</div>
+				</div>
+
+				<div class="product-gallery__prev">
+					<svg version="1.1" width="21" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 190 358" style="enable-background:new 0 0 190 358; transform: rotate(180deg);" xml:space="preserve">
+						<path d="M186.5,171.8L17.7,3c-4-4-10.3-4-14.3,0c-4,4-4,10.4,0,14.3L165,178.9L3.4,340.6c-4,4-4,10.4,0,14.3 c1.9,1.9,4.6,3,7.1,3c2.6,0,5.2-1,7.1-3l168.8-168.8C190.4,182.2,190.4,175.7,186.5,171.8L186.5,171.8z M186.5,171.8"/>
+					</svg>
+				</div>
+				<div class="product-gallery__next">
+					<svg version="1.1" width="21" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 190 358" style="enable-background:new 0 0 190 358;" xml:space="preserve">
+						<path d="M186.5,171.8L17.7,3c-4-4-10.3-4-14.3,0c-4,4-4,10.4,0,14.3L165,178.9L3.4,340.6c-4,4-4,10.4,0,14.3 c1.9,1.9,4.6,3,7.1,3c2.6,0,5.2-1,7.1-3l168.8-168.8C190.4,182.2,190.4,175.7,186.5,171.8L186.5,171.8z M186.5,171.8"/>
+					</svg>
+				</div>
+			</div>
+			<div class="product-gallery__pagination swiper-pagination"></div>
+		</div>
+		<div class="product-container__right">
+			<h1 class="product__title">coconut SPIRULINA VANILLA</h1>
+			<p class="product__descr">Скраб для тела с голубой спирулиной и эфирным маслом ванили</p>
+			<div class="product-properties">
+				<p><b>Тип кожи</b><br>нормальная, комбинированная, сухая, возрастная<br></p>
+				<p><b>Потребности кожи</b><br>пилинг, сияние и энергия, омоложение, ускоренная регенерация, тонизирование, коррекция фигуры</p>
+			</div>
+			<p class="product__measure">200 <span class="prdouct__measure-value">г</span></p>
+			<p class="product__price">990 <span class="product__price-currency">руб</span></p>
+			<form action="" class="product-page__add-form">
+				<input class="spinner-input" type="number" value="1" min="1" max="100" step="1">
+				<button type="submit" class="product-page__add-btn">Добавить</button>
+			</form>
+		</div>
+	</div>	
+</section>
+
+
+<section class="product-info pattern">
+	<div class="container">
+		<nav class="product-navigation">
+			<ul class="product-nav">
+				<li><a href="#opisanie" class="active">О продукте</a></li>
+				<li><a href="#primenenie">Применение</a></li>
+				<li><a href="#hranenie">Хранение</a></li>
+				<li><a href="#">Состав</a></li>
+				<li><a href="#otzivi">Отзывы</a></li>
+			</ul>
+		</nav>
+
+		<section class="product-description" id="opisanie">
+			<h2>ОПИСАНИЕ</h2>
+			<p>Эффективный натуральный скраб с чудодейственной индийской куркумой и маслом сладкого апельсина для борьбы с излишней пигментацией, куперозом и вросшими волосиками с интенсивным антицеллюлитным действием.</p><br><br>
+			<h2>КАК РАБОТАЕТ</h2>
+			<ul>
+				<li>• Индийская куркума способствует устранению пигментных пятен и уменьшению сосудистого рисунка, решает проблему вросших волос, обладает антибактериальными и противовоспалительными свойствами, снимает воспаления и раздражения, устраняет бледность, улучшает цвет и выравнивает тон, работает на осветление шрамов и пятен пост-акне.</li>
+				<li>• Масла сладкого апельсина и микромассаж нежными частичками солей Мертвого моря, порошка бамбука и тростникового сахара тонизируют кожу, повышают гладкость и эластичность, стимулируя расщепление жиров и избавляя от целлюлита.</li>
+				<li>• Масло ши (каритэ), авокадо и сладкого миндаля ускоряют регенерацию, восстанавливают клеточные структуры, уменьшая и препятствуя появлению растяжек и рубцов.</li>
+				<li>• Органическое масло кокоса, масло макадамии и жожоба возвращают коже ее мягкость, нежность и бархатистость.</li>
+				<li>• Витамин Е, масло зародышей пшеницы и виноградных косточек оказывают сильнейшее антиоксидантное действие, предупреждая старение кожи.</li>
+				<br><br>
+				<h2>РЕЗУЛЬТАТ</h2>
+				<ul>
+					<li>• Заметное повышение эластичности и упругости кожи.</li>
+					<li>• Значительное улучшение обменных процессов, активное сжигание жиров, отсутствие целлюлита.</li>
+					<li>• Сокращение проявления имеющихся растяжек и препятствование появлению новых.</li>
+					<li>• Осветление имеющихся пигментных пятен, ровный тон, лёгкое, красивое, здоровое сияние.</li>
+					<li>• Отсутствие купероза и красной сосудистой сеточки.</li>
+					<li>• Уменьшение нежелательной растительности на теле и вросших волос.</li>
+				</ul>
+			</ul>
+		</section>
+		<section id="primenenie" class="product-description">
+			<h2>СПОСОБ ПРИМЕНЕНИЯ</h2>
+			<p>Небольшое количество скраба нанесите на влажное тело круговыми массирующими движениями, уделяя особое внимание проблемным зонам. Оставьте скраб на теле на 3-5 минут, после чего смойте теплой водой. Для лучшего эффекта оберните пленкой проблемную зону и оставьте на 5-10 минут. Возможно легкое пощипывание кожи в силу воздействия натуральных ингредиентов. На лицо наносить с особой аккуратностью и без массирующих движений. Использовать 2-3 раза в неделю.</p>
+		</section>
+		<section class="product-description" id="hranenie">
+			<h2>УСЛОВИЯ ХРАНЕНИЯ</h2>
+			<p>В сухом прохладном месте без воздействия прямых солнечных лучей и нормальной влажностью воздуха.</p>
+			<div class="offer-icons">
+				<div class="offer-icons__item">
+					<div class="offer-icons__icon">
+						<svg 
+						 xmlns="http://www.w3.org/2000/svg"
+						 xmlns:xlink="http://www.w3.org/1999/xlink"
+						 width="23px" height="40px">
+						<image  x="0px" y="0px" width="23px" height="40px"  xlink:href="data:img/png;base64,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" />
+						</svg>
+					</div>
+					<div class="offer-icons__text">от +5°C до +25°C</div>
+				</div>
+				<div class="offer-icons__item">
+					<div class="offer-icons__icon">
+						<svg 
+						 xmlns="http://www.w3.org/2000/svg"
+						 xmlns:xlink="http://www.w3.org/1999/xlink"
+						 width="40px" height="40px">
+						<image  x="0px" y="0px" width="40px" height="40px"  xlink:href="data:img/png;base64,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" />
+						</svg>
+					</div>
+					<div class="offer-icons__text">2 года</div>
+				</div>
+				<div class="offer-icons__item">
+					<div class="offer-icons__icon">
+						<svg 
+						 xmlns="http://www.w3.org/2000/svg"
+						 xmlns:xlink="http://www.w3.org/1999/xlink"
+						 width="40px" height="40px">
+						<image  x="0px" y="0px" width="40px" height="40px"  xlink:href="data:img/png;base64,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" />
+						</svg>
+					</div>
+					<div class="offer-icons__text">2 года</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</section>
+
+
+<section id="otzivi" class="happy-client-wrapper bg_pink pattern">
+	<div class="section-title">
+		<span class="section-title__icon">
+			<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="43px" height="43px">
+			<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+			 d="M21.000,10.531 C26.782,10.531 31.469,15.218 31.469,21.000 C31.469,26.781 26.782,31.469 21.000,31.469 C15.218,31.469 10.531,26.781 10.531,21.000 C10.531,15.218 15.218,10.531 21.000,10.531 Z"/>
+			<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+			 d="M31.875,7.875 C33.359,7.875 34.562,9.064 34.562,10.531 C34.562,11.998 33.359,13.187 31.875,13.187 C30.391,13.187 29.187,11.998 29.187,10.531 C29.187,9.064 30.391,7.875 31.875,7.875 Z"/>
+			<path fill-rule="evenodd"  stroke="rgb(255, 255, 255)" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none"
+			 d="M16.000,1.000 L26.000,1.000 C34.284,1.000 41.000,7.715 41.000,16.000 L41.000,26.000 C41.000,34.284 34.284,41.000 26.000,41.000 L16.000,41.000 C7.716,41.000 1.000,34.284 1.000,26.000 L1.000,16.000 C1.000,7.715 7.716,1.000 16.000,1.000 Z"/>
+			</svg>
+
+		</span>
+		<h4 class="section-title__text">СЧАСТЛИВЫЕ КЛИЕНТЫ</h4>
+		<div class="section-title__arrows">
+			<div class="happy-client__prev">
+				<svg version="1.1" width="57" height="17"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 57 16.5" style="enable-background:new 0 0 57 16.5; fill:#fff;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10; transform: rotate(180deg);" xml:space="preserve">
+				<line x1="1" y1="8.3" x2="56" y2="8.3"/>
+				<line x1="56" y1="8" x2="49" y2="1"/>
+				<line x1="56" y1="8.5" x2="49" y2="15.5"/>
+				</svg>
+			</div>
+			<div class="happy-client__next">
+				<svg version="1.1" width="57" height="17"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 viewBox="0 0 57 16.5" style="enable-background:new 0 0 57 16.5; fill:#fff;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-miterlimit:10;" xml:space="preserve">
+				<line x1="1" y1="8.3" x2="56" y2="8.3"/>
+				<line x1="56" y1="8" x2="49" y2="1"/>
+				<line x1="56" y1="8.5" x2="49" y2="15.5"/>
+				</svg>
+			</div>
+		</div>
+	</div>
+
+	<div class="happy-client swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide happy-client__item">
+				<div class="post-preview">
+					<a href="#" class="post-preview__link" target="_blank">
+						<img src="img/happy_1.png" class="post-preview__photo" alt="">	
+					</a>
+					<div class="instagram-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px">
+						<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+						 d="M11.346,2.753 C14.140,2.753 14.471,2.763 15.575,2.814 C16.595,2.861 17.150,3.031 17.518,3.174 C18.007,3.364 18.356,3.592 18.722,3.958 C19.088,4.325 19.315,4.674 19.505,5.162 C19.648,5.532 19.819,6.085 19.865,7.107 C19.916,8.211 19.926,8.542 19.926,11.339 C19.926,14.135 19.916,14.467 19.865,15.570 C19.819,16.592 19.648,17.146 19.505,17.516 C19.315,18.004 19.088,18.352 18.722,18.719 C18.356,19.086 18.007,19.313 17.518,19.503 C17.150,19.647 16.595,19.817 15.575,19.864 C14.471,19.915 14.141,19.924 11.346,19.924 C8.551,19.924 8.219,19.915 7.116,19.864 C6.096,19.817 5.541,19.647 5.172,19.503 C4.684,19.313 4.335,19.086 3.969,18.719 C3.603,18.352 3.376,18.004 3.186,17.516 C3.043,17.146 2.872,16.592 2.826,15.570 C2.775,14.467 2.765,14.135 2.765,11.339 C2.765,8.542 2.775,8.211 2.826,7.107 C2.872,6.085 3.043,5.532 3.186,5.162 C3.376,4.674 3.603,4.325 3.969,3.958 C4.335,3.592 4.684,3.364 5.172,3.174 C5.541,3.031 6.096,2.861 7.116,2.814 C8.220,2.763 8.551,2.753 11.346,2.753 M11.346,0.866 C8.503,0.866 8.146,0.878 7.030,0.929 C5.916,0.981 5.155,1.156 4.489,1.416 C3.801,1.683 3.217,2.042 2.635,2.624 C2.054,3.206 1.696,3.790 1.428,4.478 C1.169,5.146 0.993,5.906 0.942,7.021 C0.891,8.138 0.879,8.495 0.879,11.339 C0.879,14.183 0.891,14.541 0.942,15.657 C0.993,16.771 1.169,17.533 1.428,18.199 C1.696,18.888 2.054,19.471 2.635,20.054 C3.217,20.637 3.801,20.995 4.489,21.261 C5.155,21.521 5.916,21.698 7.030,21.750 C8.146,21.800 8.503,21.812 11.346,21.812 C14.188,21.812 14.545,21.800 15.661,21.750 C16.775,21.698 17.536,21.521 18.202,21.261 C18.890,20.995 19.474,20.637 20.055,20.054 C20.637,19.471 20.995,18.888 21.263,18.199 C21.522,17.533 21.698,16.771 21.749,15.657 C21.800,14.541 21.812,14.183 21.812,11.339 C21.812,8.495 21.800,8.138 21.749,7.021 C21.698,5.906 21.522,5.146 21.263,4.478 C20.995,3.790 20.637,3.206 20.055,2.624 C19.474,2.042 18.890,1.683 18.202,1.416 C17.536,1.156 16.775,0.981 15.661,0.929 C14.545,0.878 14.188,0.866 11.346,0.866 ZM11.346,5.961 C8.377,5.961 5.971,8.369 5.971,11.339 C5.971,14.309 8.377,16.716 11.346,16.716 C14.314,16.716 16.720,14.309 16.720,11.339 C16.720,8.369 14.314,5.961 11.346,5.961 ZM11.346,14.830 C9.419,14.830 7.857,13.267 7.857,11.339 C7.857,9.410 9.419,7.848 11.346,7.848 C13.272,7.848 14.834,9.410 14.834,11.339 C14.834,13.267 13.272,14.830 11.346,14.830 ZM18.189,5.749 C18.189,6.442 17.626,7.006 16.933,7.006 C16.239,7.006 15.677,6.442 15.677,5.749 C15.677,5.054 16.239,4.492 16.933,4.492 C17.626,4.492 18.189,5.054 18.189,5.749 Z"/>
+						</svg>
+					</div>
+					<div class="instagram-user">
+						<div class="instagram-user__avatar">
+							<img src="img/happy_avatar_1.png" alt="">
+						</div>
+						<span class="instagram-user__login">@stella_mihailova</span>
+					</div>
+				</div>
+				<div class="post-box">
+					<div class="post-header">
+						<div class="icon_txt_right">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="21px">
+							<path fill-rule="evenodd"  fill="rgb(37, 54, 59)"
+							 d="M10.931,20.690 C10.620,20.690 10.320,20.574 10.087,20.365 C9.205,19.578 8.355,18.837 7.605,18.185 L7.601,18.181 C5.402,16.267 3.503,14.613 2.182,12.984 C0.705,11.162 0.017,9.436 0.017,7.549 C0.017,5.716 0.632,4.026 1.749,2.789 C2.879,1.536 4.429,0.847 6.115,0.847 C7.375,0.847 8.529,1.253 9.544,2.056 C10.057,2.462 10.521,2.956 10.931,3.536 C11.340,2.956 11.805,2.462 12.317,2.056 C13.333,1.253 14.487,0.847 15.747,0.847 C17.432,0.847 18.983,1.536 20.113,2.789 C21.229,4.026 21.844,5.716 21.844,7.549 C21.844,9.436 21.156,11.162 19.680,12.983 C18.358,14.613 16.460,16.266 14.261,18.181 C13.510,18.835 12.658,19.576 11.774,20.365 C11.541,20.574 11.241,20.690 10.931,20.690 L10.931,20.690 ZM6.115,2.153 C4.790,2.153 3.574,2.693 2.689,3.673 C1.791,4.670 1.296,6.046 1.296,7.549 C1.296,9.135 1.873,10.554 3.166,12.151 C4.417,13.691 6.277,15.311 8.430,17.186 L8.434,17.191 C9.187,17.846 10.041,18.589 10.929,19.383 C11.822,18.587 12.677,17.843 13.431,17.186 C15.585,15.311 17.445,13.691 18.695,12.151 C19.989,10.554 20.566,9.135 20.566,7.549 C20.566,6.046 20.071,4.670 19.173,3.673 C18.288,2.693 17.071,2.153 15.747,2.153 C14.777,2.153 13.886,2.468 13.099,3.090 C12.399,3.644 11.910,4.344 11.624,4.833 C11.477,5.086 11.218,5.236 10.931,5.236 C10.644,5.236 10.385,5.086 10.238,4.833 C9.951,4.344 9.463,3.644 8.762,3.090 C7.976,2.468 7.085,2.153 6.115,2.153 L6.115,2.153 Z"/>
+							</svg>
+							<span class="icon__text">11 111</span>
+						</div>
+						<div class="icon_txt_right">
+							<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20" height="20" viewBox="0 0 104.9 105" style="enable-background:new 0 0 104.9 105;" xml:space="preserve">
+								<path d="M89.6,15.4C79.7,5.5,66.5,0,52.5,0S25.3,5.5,15.4,15.4C-3.8,34.5-5.2,65.1,11.9,85.8c-2.4,4.8-5.1,8-8.3,9.6 c-1.9,0.9-3,3-2.7,5.1c0.3,2.1,2,3.8,4.1,4.1c1.2,0.2,2.4,0.3,3.7,0.3c6.4,0,13.2-2.2,18.9-6.1c7.6,4.1,16.2,6.2,24.9,6.2 c14,0,27.2-5.5,37.1-15.4c9.9-9.9,15.4-23.1,15.4-37.1C104.9,38.5,99.5,25.3,89.6,15.4L89.6,15.4z M85.4,85.4 C76.6,94.2,64.9,99,52.5,99c-8.3,0-16.5-2.2-23.6-6.4c-0.5-0.3-1-0.4-1.5-0.4c-0.6,0-1.3,0.2-1.8,0.6c-6.7,5.2-13.5,6-16.5,6 c3.5-2.6,6.5-6.7,9-12.4c0.5-1.1,0.3-2.3-0.5-3.2c-16.3-18.4-15.4-46.4,2-63.8C28.4,10.8,40,5.9,52.5,5.9 c12.4,0,24.1,4.8,32.9,13.6C103.5,37.7,103.5,67.3,85.4,85.4L85.4,85.4z M85.4,85.4"/>
+								<path d="M74.5,35.2h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,36.5,76.1,35.2,74.5,35.2L74.5,35.2z M74.5,35.2"/>
+								<path d="M74.5,49.5h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,50.9,76.1,49.5,74.5,49.5L74.5,49.5z M74.5,49.5"/>
+								<path d="M74.5,63.9h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,65.2,76.1,63.9,74.5,63.9L74.5,63.9z M74.5,63.9"/>
+							</svg>
+							<span class="icon__text">11 111</span>
+						</div>
+					</div>
+					<div class="post-content">
+						<p>Двойной удар по целлюлиту и растяжкам.</p>
+						<p>Индийская куркума:<br> Способствует усилению лимфотока и кровотока, ускоряет обменные процессы и процесс расщепления жиров.<br> Маскирует растяжки, делая их светлее, разглаживает и постепенно полностью избавляет от них.</p>
+						<p>Эфирное масло сладкого апельсина:<br> Выводит шлаки, токсины и лишнюю жидкость из клеток, подтягивая и разглаживая кожу.<br> Нормализует углеводно-жировой обмен в коже, запуская программу по избавлению от целлюлита, растяжек и дряблости кожи.</p>
+						<p>Эти компоненты комплексно воздействуют на основные проблемы дряблой кожи — "апельсиновой корки", растяжек, потери упругости и эластичности</p>
+						<p>Двойной удар по целлюлиту и растяжкам.</p>
+						<br>
+						<p>123Индийская куркума:<br> Способствует усилению лимфотока и кровотока, ускоряет обменные процессы и процесс расщепления жиров.<br> Маскирует растяжки, делая их светлее, разглаживает и постепенно полностью избавляет от них.</p>
+						<p>Эфирное масло сладкого апельсина:<br> Выводит шлаки, токсины и лишнюю жидкость из клеток, подтягивая и разглаживая кожу.<br> Нормализует углеводно-жировой обмен в коже, запуская программу по избавлению от целлюлита, растяжек и дряблости кожи.</p>
+						<p>Эти компоненты комплексно воздействуют на основные проблемы дряблой кожи — "апельсиновой корки", растяжек, потери упругости и эластичности...</p>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide happy-client__item">
+				<div class="post-preview">
+					<a href="#" class="post-preview__link" target="_blank">
+						<img src="img/happy_1.png" class="post-preview__photo" alt="">	
+					</a>
+					<div class="instagram-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px">
+						<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+						 d="M11.346,2.753 C14.140,2.753 14.471,2.763 15.575,2.814 C16.595,2.861 17.150,3.031 17.518,3.174 C18.007,3.364 18.356,3.592 18.722,3.958 C19.088,4.325 19.315,4.674 19.505,5.162 C19.648,5.532 19.819,6.085 19.865,7.107 C19.916,8.211 19.926,8.542 19.926,11.339 C19.926,14.135 19.916,14.467 19.865,15.570 C19.819,16.592 19.648,17.146 19.505,17.516 C19.315,18.004 19.088,18.352 18.722,18.719 C18.356,19.086 18.007,19.313 17.518,19.503 C17.150,19.647 16.595,19.817 15.575,19.864 C14.471,19.915 14.141,19.924 11.346,19.924 C8.551,19.924 8.219,19.915 7.116,19.864 C6.096,19.817 5.541,19.647 5.172,19.503 C4.684,19.313 4.335,19.086 3.969,18.719 C3.603,18.352 3.376,18.004 3.186,17.516 C3.043,17.146 2.872,16.592 2.826,15.570 C2.775,14.467 2.765,14.135 2.765,11.339 C2.765,8.542 2.775,8.211 2.826,7.107 C2.872,6.085 3.043,5.532 3.186,5.162 C3.376,4.674 3.603,4.325 3.969,3.958 C4.335,3.592 4.684,3.364 5.172,3.174 C5.541,3.031 6.096,2.861 7.116,2.814 C8.220,2.763 8.551,2.753 11.346,2.753 M11.346,0.866 C8.503,0.866 8.146,0.878 7.030,0.929 C5.916,0.981 5.155,1.156 4.489,1.416 C3.801,1.683 3.217,2.042 2.635,2.624 C2.054,3.206 1.696,3.790 1.428,4.478 C1.169,5.146 0.993,5.906 0.942,7.021 C0.891,8.138 0.879,8.495 0.879,11.339 C0.879,14.183 0.891,14.541 0.942,15.657 C0.993,16.771 1.169,17.533 1.428,18.199 C1.696,18.888 2.054,19.471 2.635,20.054 C3.217,20.637 3.801,20.995 4.489,21.261 C5.155,21.521 5.916,21.698 7.030,21.750 C8.146,21.800 8.503,21.812 11.346,21.812 C14.188,21.812 14.545,21.800 15.661,21.750 C16.775,21.698 17.536,21.521 18.202,21.261 C18.890,20.995 19.474,20.637 20.055,20.054 C20.637,19.471 20.995,18.888 21.263,18.199 C21.522,17.533 21.698,16.771 21.749,15.657 C21.800,14.541 21.812,14.183 21.812,11.339 C21.812,8.495 21.800,8.138 21.749,7.021 C21.698,5.906 21.522,5.146 21.263,4.478 C20.995,3.790 20.637,3.206 20.055,2.624 C19.474,2.042 18.890,1.683 18.202,1.416 C17.536,1.156 16.775,0.981 15.661,0.929 C14.545,0.878 14.188,0.866 11.346,0.866 ZM11.346,5.961 C8.377,5.961 5.971,8.369 5.971,11.339 C5.971,14.309 8.377,16.716 11.346,16.716 C14.314,16.716 16.720,14.309 16.720,11.339 C16.720,8.369 14.314,5.961 11.346,5.961 ZM11.346,14.830 C9.419,14.830 7.857,13.267 7.857,11.339 C7.857,9.410 9.419,7.848 11.346,7.848 C13.272,7.848 14.834,9.410 14.834,11.339 C14.834,13.267 13.272,14.830 11.346,14.830 ZM18.189,5.749 C18.189,6.442 17.626,7.006 16.933,7.006 C16.239,7.006 15.677,6.442 15.677,5.749 C15.677,5.054 16.239,4.492 16.933,4.492 C17.626,4.492 18.189,5.054 18.189,5.749 Z"/>
+						</svg>
+					</div>
+					<div class="instagram-user">
+						<div class="instagram-user__avatar">
+							<img src="img/happy_avatar_1.png" alt="">
+						</div>
+						<span class="instagram-user__login">@stella_mihailova</span>
+					</div>
+				</div>
+				<div class="post-box">
+					<div class="post-header">
+						<div class="icon_txt_right">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="21px">
+							<path fill-rule="evenodd"  fill="rgb(37, 54, 59)"
+							 d="M10.931,20.690 C10.620,20.690 10.320,20.574 10.087,20.365 C9.205,19.578 8.355,18.837 7.605,18.185 L7.601,18.181 C5.402,16.267 3.503,14.613 2.182,12.984 C0.705,11.162 0.017,9.436 0.017,7.549 C0.017,5.716 0.632,4.026 1.749,2.789 C2.879,1.536 4.429,0.847 6.115,0.847 C7.375,0.847 8.529,1.253 9.544,2.056 C10.057,2.462 10.521,2.956 10.931,3.536 C11.340,2.956 11.805,2.462 12.317,2.056 C13.333,1.253 14.487,0.847 15.747,0.847 C17.432,0.847 18.983,1.536 20.113,2.789 C21.229,4.026 21.844,5.716 21.844,7.549 C21.844,9.436 21.156,11.162 19.680,12.983 C18.358,14.613 16.460,16.266 14.261,18.181 C13.510,18.835 12.658,19.576 11.774,20.365 C11.541,20.574 11.241,20.690 10.931,20.690 L10.931,20.690 ZM6.115,2.153 C4.790,2.153 3.574,2.693 2.689,3.673 C1.791,4.670 1.296,6.046 1.296,7.549 C1.296,9.135 1.873,10.554 3.166,12.151 C4.417,13.691 6.277,15.311 8.430,17.186 L8.434,17.191 C9.187,17.846 10.041,18.589 10.929,19.383 C11.822,18.587 12.677,17.843 13.431,17.186 C15.585,15.311 17.445,13.691 18.695,12.151 C19.989,10.554 20.566,9.135 20.566,7.549 C20.566,6.046 20.071,4.670 19.173,3.673 C18.288,2.693 17.071,2.153 15.747,2.153 C14.777,2.153 13.886,2.468 13.099,3.090 C12.399,3.644 11.910,4.344 11.624,4.833 C11.477,5.086 11.218,5.236 10.931,5.236 C10.644,5.236 10.385,5.086 10.238,4.833 C9.951,4.344 9.463,3.644 8.762,3.090 C7.976,2.468 7.085,2.153 6.115,2.153 L6.115,2.153 Z"/>
+							</svg>
+							<span class="icon__text">11 111</span>
+						</div>
+						<div class="icon_txt_right">
+							<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20" height="20" viewBox="0 0 104.9 105" style="enable-background:new 0 0 104.9 105;" xml:space="preserve">
+								<path d="M89.6,15.4C79.7,5.5,66.5,0,52.5,0S25.3,5.5,15.4,15.4C-3.8,34.5-5.2,65.1,11.9,85.8c-2.4,4.8-5.1,8-8.3,9.6 c-1.9,0.9-3,3-2.7,5.1c0.3,2.1,2,3.8,4.1,4.1c1.2,0.2,2.4,0.3,3.7,0.3c6.4,0,13.2-2.2,18.9-6.1c7.6,4.1,16.2,6.2,24.9,6.2 c14,0,27.2-5.5,37.1-15.4c9.9-9.9,15.4-23.1,15.4-37.1C104.9,38.5,99.5,25.3,89.6,15.4L89.6,15.4z M85.4,85.4 C76.6,94.2,64.9,99,52.5,99c-8.3,0-16.5-2.2-23.6-6.4c-0.5-0.3-1-0.4-1.5-0.4c-0.6,0-1.3,0.2-1.8,0.6c-6.7,5.2-13.5,6-16.5,6 c3.5-2.6,6.5-6.7,9-12.4c0.5-1.1,0.3-2.3-0.5-3.2c-16.3-18.4-15.4-46.4,2-63.8C28.4,10.8,40,5.9,52.5,5.9 c12.4,0,24.1,4.8,32.9,13.6C103.5,37.7,103.5,67.3,85.4,85.4L85.4,85.4z M85.4,85.4"/>
+								<path d="M74.5,35.2h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,36.5,76.1,35.2,74.5,35.2L74.5,35.2z M74.5,35.2"/>
+								<path d="M74.5,49.5h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,50.9,76.1,49.5,74.5,49.5L74.5,49.5z M74.5,49.5"/>
+								<path d="M74.5,63.9h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,65.2,76.1,63.9,74.5,63.9L74.5,63.9z M74.5,63.9"/>
+							</svg>
+							<span class="icon__text">11 111</span>
+						</div>
+					</div>
+					<div class="post-content">
+						<p>Двойной удар по целлюлиту и растяжкам.</p>
+						<p>Индийская куркума:<br> Способствует усилению лимфотока и кровотока, ускоряет обменные процессы и процесс расщепления жиров.<br> Маскирует растяжки, делая их светлее, разглаживает и постепенно полностью избавляет от них.</p>
+					
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide happy-client__item">
+				<div class="post-preview">
+					<a href="#" class="post-preview__link" target="_blank">
+						<img src="img/happy_1.png" class="post-preview__photo" alt="">	
+					</a>
+					<div class="instagram-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px">
+						<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+						 d="M11.346,2.753 C14.140,2.753 14.471,2.763 15.575,2.814 C16.595,2.861 17.150,3.031 17.518,3.174 C18.007,3.364 18.356,3.592 18.722,3.958 C19.088,4.325 19.315,4.674 19.505,5.162 C19.648,5.532 19.819,6.085 19.865,7.107 C19.916,8.211 19.926,8.542 19.926,11.339 C19.926,14.135 19.916,14.467 19.865,15.570 C19.819,16.592 19.648,17.146 19.505,17.516 C19.315,18.004 19.088,18.352 18.722,18.719 C18.356,19.086 18.007,19.313 17.518,19.503 C17.150,19.647 16.595,19.817 15.575,19.864 C14.471,19.915 14.141,19.924 11.346,19.924 C8.551,19.924 8.219,19.915 7.116,19.864 C6.096,19.817 5.541,19.647 5.172,19.503 C4.684,19.313 4.335,19.086 3.969,18.719 C3.603,18.352 3.376,18.004 3.186,17.516 C3.043,17.146 2.872,16.592 2.826,15.570 C2.775,14.467 2.765,14.135 2.765,11.339 C2.765,8.542 2.775,8.211 2.826,7.107 C2.872,6.085 3.043,5.532 3.186,5.162 C3.376,4.674 3.603,4.325 3.969,3.958 C4.335,3.592 4.684,3.364 5.172,3.174 C5.541,3.031 6.096,2.861 7.116,2.814 C8.220,2.763 8.551,2.753 11.346,2.753 M11.346,0.866 C8.503,0.866 8.146,0.878 7.030,0.929 C5.916,0.981 5.155,1.156 4.489,1.416 C3.801,1.683 3.217,2.042 2.635,2.624 C2.054,3.206 1.696,3.790 1.428,4.478 C1.169,5.146 0.993,5.906 0.942,7.021 C0.891,8.138 0.879,8.495 0.879,11.339 C0.879,14.183 0.891,14.541 0.942,15.657 C0.993,16.771 1.169,17.533 1.428,18.199 C1.696,18.888 2.054,19.471 2.635,20.054 C3.217,20.637 3.801,20.995 4.489,21.261 C5.155,21.521 5.916,21.698 7.030,21.750 C8.146,21.800 8.503,21.812 11.346,21.812 C14.188,21.812 14.545,21.800 15.661,21.750 C16.775,21.698 17.536,21.521 18.202,21.261 C18.890,20.995 19.474,20.637 20.055,20.054 C20.637,19.471 20.995,18.888 21.263,18.199 C21.522,17.533 21.698,16.771 21.749,15.657 C21.800,14.541 21.812,14.183 21.812,11.339 C21.812,8.495 21.800,8.138 21.749,7.021 C21.698,5.906 21.522,5.146 21.263,4.478 C20.995,3.790 20.637,3.206 20.055,2.624 C19.474,2.042 18.890,1.683 18.202,1.416 C17.536,1.156 16.775,0.981 15.661,0.929 C14.545,0.878 14.188,0.866 11.346,0.866 ZM11.346,5.961 C8.377,5.961 5.971,8.369 5.971,11.339 C5.971,14.309 8.377,16.716 11.346,16.716 C14.314,16.716 16.720,14.309 16.720,11.339 C16.720,8.369 14.314,5.961 11.346,5.961 ZM11.346,14.830 C9.419,14.830 7.857,13.267 7.857,11.339 C7.857,9.410 9.419,7.848 11.346,7.848 C13.272,7.848 14.834,9.410 14.834,11.339 C14.834,13.267 13.272,14.830 11.346,14.830 ZM18.189,5.749 C18.189,6.442 17.626,7.006 16.933,7.006 C16.239,7.006 15.677,6.442 15.677,5.749 C15.677,5.054 16.239,4.492 16.933,4.492 C17.626,4.492 18.189,5.054 18.189,5.749 Z"/>
+						</svg>
+					</div>
+					<div class="instagram-user">
+						<div class="instagram-user__avatar">
+							<img src="img/happy_avatar_1.png" alt="">
+						</div>
+						<span class="instagram-user__login">@stella_mihailova</span>
+					</div>
+				</div>
+				<div class="post-box">
+					<div class="post-header">
+						<div class="icon_txt_right">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="21px">
+							<path fill-rule="evenodd"  fill="rgb(37, 54, 59)"
+							 d="M10.931,20.690 C10.620,20.690 10.320,20.574 10.087,20.365 C9.205,19.578 8.355,18.837 7.605,18.185 L7.601,18.181 C5.402,16.267 3.503,14.613 2.182,12.984 C0.705,11.162 0.017,9.436 0.017,7.549 C0.017,5.716 0.632,4.026 1.749,2.789 C2.879,1.536 4.429,0.847 6.115,0.847 C7.375,0.847 8.529,1.253 9.544,2.056 C10.057,2.462 10.521,2.956 10.931,3.536 C11.340,2.956 11.805,2.462 12.317,2.056 C13.333,1.253 14.487,0.847 15.747,0.847 C17.432,0.847 18.983,1.536 20.113,2.789 C21.229,4.026 21.844,5.716 21.844,7.549 C21.844,9.436 21.156,11.162 19.680,12.983 C18.358,14.613 16.460,16.266 14.261,18.181 C13.510,18.835 12.658,19.576 11.774,20.365 C11.541,20.574 11.241,20.690 10.931,20.690 L10.931,20.690 ZM6.115,2.153 C4.790,2.153 3.574,2.693 2.689,3.673 C1.791,4.670 1.296,6.046 1.296,7.549 C1.296,9.135 1.873,10.554 3.166,12.151 C4.417,13.691 6.277,15.311 8.430,17.186 L8.434,17.191 C9.187,17.846 10.041,18.589 10.929,19.383 C11.822,18.587 12.677,17.843 13.431,17.186 C15.585,15.311 17.445,13.691 18.695,12.151 C19.989,10.554 20.566,9.135 20.566,7.549 C20.566,6.046 20.071,4.670 19.173,3.673 C18.288,2.693 17.071,2.153 15.747,2.153 C14.777,2.153 13.886,2.468 13.099,3.090 C12.399,3.644 11.910,4.344 11.624,4.833 C11.477,5.086 11.218,5.236 10.931,5.236 C10.644,5.236 10.385,5.086 10.238,4.833 C9.951,4.344 9.463,3.644 8.762,3.090 C7.976,2.468 7.085,2.153 6.115,2.153 L6.115,2.153 Z"/>
+							</svg>
+							<span class="icon__text">11 111</span>
+						</div>
+						<div class="icon_txt_right">
+							<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20" height="20" viewBox="0 0 104.9 105" style="enable-background:new 0 0 104.9 105;" xml:space="preserve">
+								<path d="M89.6,15.4C79.7,5.5,66.5,0,52.5,0S25.3,5.5,15.4,15.4C-3.8,34.5-5.2,65.1,11.9,85.8c-2.4,4.8-5.1,8-8.3,9.6 c-1.9,0.9-3,3-2.7,5.1c0.3,2.1,2,3.8,4.1,4.1c1.2,0.2,2.4,0.3,3.7,0.3c6.4,0,13.2-2.2,18.9-6.1c7.6,4.1,16.2,6.2,24.9,6.2 c14,0,27.2-5.5,37.1-15.4c9.9-9.9,15.4-23.1,15.4-37.1C104.9,38.5,99.5,25.3,89.6,15.4L89.6,15.4z M85.4,85.4 C76.6,94.2,64.9,99,52.5,99c-8.3,0-16.5-2.2-23.6-6.4c-0.5-0.3-1-0.4-1.5-0.4c-0.6,0-1.3,0.2-1.8,0.6c-6.7,5.2-13.5,6-16.5,6 c3.5-2.6,6.5-6.7,9-12.4c0.5-1.1,0.3-2.3-0.5-3.2c-16.3-18.4-15.4-46.4,2-63.8C28.4,10.8,40,5.9,52.5,5.9 c12.4,0,24.1,4.8,32.9,13.6C103.5,37.7,103.5,67.3,85.4,85.4L85.4,85.4z M85.4,85.4"/>
+								<path d="M74.5,35.2h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,36.5,76.1,35.2,74.5,35.2L74.5,35.2z M74.5,35.2"/>
+								<path d="M74.5,49.5h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,50.9,76.1,49.5,74.5,49.5L74.5,49.5z M74.5,49.5"/>
+								<path d="M74.5,63.9h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,65.2,76.1,63.9,74.5,63.9L74.5,63.9z M74.5,63.9"/>
+							</svg>
+							<span class="icon__text">11 111</span>
+						</div>
+					</div>
+					<div class="post-content">
+						<p>Двойной удар по целлюлиту и растяжкам.</p>
+						<p>Индийская куркума:<br> Способствует усилению лимфотока и кровотока, ускоряет обменные процессы и процесс расщепления жиров.<br> Маскирует растяжки, делая их светлее, разглаживает и постепенно полностью избавляет от них.</p>
+						<p>Эфирное масло сладкого апельсина:<br> Выводит шлаки, токсины и лишнюю жидкость из клеток, подтягивая и разглаживая кожу.<br> Нормализует углеводно-жировой обмен в коже, запуская программу по избавлению от целлюлита, растяжек и дряблости кожи.</p>
+						<p>Эти компоненты комплексно воздействуют на основные проблемы дряблой кожи — "апельсиновой корки", растяжек, потери упругости и эластичности...</p>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide happy-client__item">
+				<div class="post-preview">
+					<a href="#" class="post-preview__link" target="_blank">
+						<img src="img/happy_1.png" class="post-preview__photo" alt="">	
+					</a>
+					<div class="instagram-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px">
+						<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+						 d="M11.346,2.753 C14.140,2.753 14.471,2.763 15.575,2.814 C16.595,2.861 17.150,3.031 17.518,3.174 C18.007,3.364 18.356,3.592 18.722,3.958 C19.088,4.325 19.315,4.674 19.505,5.162 C19.648,5.532 19.819,6.085 19.865,7.107 C19.916,8.211 19.926,8.542 19.926,11.339 C19.926,14.135 19.916,14.467 19.865,15.570 C19.819,16.592 19.648,17.146 19.505,17.516 C19.315,18.004 19.088,18.352 18.722,18.719 C18.356,19.086 18.007,19.313 17.518,19.503 C17.150,19.647 16.595,19.817 15.575,19.864 C14.471,19.915 14.141,19.924 11.346,19.924 C8.551,19.924 8.219,19.915 7.116,19.864 C6.096,19.817 5.541,19.647 5.172,19.503 C4.684,19.313 4.335,19.086 3.969,18.719 C3.603,18.352 3.376,18.004 3.186,17.516 C3.043,17.146 2.872,16.592 2.826,15.570 C2.775,14.467 2.765,14.135 2.765,11.339 C2.765,8.542 2.775,8.211 2.826,7.107 C2.872,6.085 3.043,5.532 3.186,5.162 C3.376,4.674 3.603,4.325 3.969,3.958 C4.335,3.592 4.684,3.364 5.172,3.174 C5.541,3.031 6.096,2.861 7.116,2.814 C8.220,2.763 8.551,2.753 11.346,2.753 M11.346,0.866 C8.503,0.866 8.146,0.878 7.030,0.929 C5.916,0.981 5.155,1.156 4.489,1.416 C3.801,1.683 3.217,2.042 2.635,2.624 C2.054,3.206 1.696,3.790 1.428,4.478 C1.169,5.146 0.993,5.906 0.942,7.021 C0.891,8.138 0.879,8.495 0.879,11.339 C0.879,14.183 0.891,14.541 0.942,15.657 C0.993,16.771 1.169,17.533 1.428,18.199 C1.696,18.888 2.054,19.471 2.635,20.054 C3.217,20.637 3.801,20.995 4.489,21.261 C5.155,21.521 5.916,21.698 7.030,21.750 C8.146,21.800 8.503,21.812 11.346,21.812 C14.188,21.812 14.545,21.800 15.661,21.750 C16.775,21.698 17.536,21.521 18.202,21.261 C18.890,20.995 19.474,20.637 20.055,20.054 C20.637,19.471 20.995,18.888 21.263,18.199 C21.522,17.533 21.698,16.771 21.749,15.657 C21.800,14.541 21.812,14.183 21.812,11.339 C21.812,8.495 21.800,8.138 21.749,7.021 C21.698,5.906 21.522,5.146 21.263,4.478 C20.995,3.790 20.637,3.206 20.055,2.624 C19.474,2.042 18.890,1.683 18.202,1.416 C17.536,1.156 16.775,0.981 15.661,0.929 C14.545,0.878 14.188,0.866 11.346,0.866 ZM11.346,5.961 C8.377,5.961 5.971,8.369 5.971,11.339 C5.971,14.309 8.377,16.716 11.346,16.716 C14.314,16.716 16.720,14.309 16.720,11.339 C16.720,8.369 14.314,5.961 11.346,5.961 ZM11.346,14.830 C9.419,14.830 7.857,13.267 7.857,11.339 C7.857,9.410 9.419,7.848 11.346,7.848 C13.272,7.848 14.834,9.410 14.834,11.339 C14.834,13.267 13.272,14.830 11.346,14.830 ZM18.189,5.749 C18.189,6.442 17.626,7.006 16.933,7.006 C16.239,7.006 15.677,6.442 15.677,5.749 C15.677,5.054 16.239,4.492 16.933,4.492 C17.626,4.492 18.189,5.054 18.189,5.749 Z"/>
+						</svg>
+					</div>
+					<div class="instagram-user">
+						<div class="instagram-user__avatar">
+							<img src="img/happy_avatar_1.png" alt="">
+						</div>
+						<span class="instagram-user__login">@stella_mihailova</span>
+					</div>
+				</div>
+				<div class="post-box">
+					<div class="post-header">
+						<div class="icon_txt_right">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="21px">
+							<path fill-rule="evenodd"  fill="rgb(37, 54, 59)"
+							 d="M10.931,20.690 C10.620,20.690 10.320,20.574 10.087,20.365 C9.205,19.578 8.355,18.837 7.605,18.185 L7.601,18.181 C5.402,16.267 3.503,14.613 2.182,12.984 C0.705,11.162 0.017,9.436 0.017,7.549 C0.017,5.716 0.632,4.026 1.749,2.789 C2.879,1.536 4.429,0.847 6.115,0.847 C7.375,0.847 8.529,1.253 9.544,2.056 C10.057,2.462 10.521,2.956 10.931,3.536 C11.340,2.956 11.805,2.462 12.317,2.056 C13.333,1.253 14.487,0.847 15.747,0.847 C17.432,0.847 18.983,1.536 20.113,2.789 C21.229,4.026 21.844,5.716 21.844,7.549 C21.844,9.436 21.156,11.162 19.680,12.983 C18.358,14.613 16.460,16.266 14.261,18.181 C13.510,18.835 12.658,19.576 11.774,20.365 C11.541,20.574 11.241,20.690 10.931,20.690 L10.931,20.690 ZM6.115,2.153 C4.790,2.153 3.574,2.693 2.689,3.673 C1.791,4.670 1.296,6.046 1.296,7.549 C1.296,9.135 1.873,10.554 3.166,12.151 C4.417,13.691 6.277,15.311 8.430,17.186 L8.434,17.191 C9.187,17.846 10.041,18.589 10.929,19.383 C11.822,18.587 12.677,17.843 13.431,17.186 C15.585,15.311 17.445,13.691 18.695,12.151 C19.989,10.554 20.566,9.135 20.566,7.549 C20.566,6.046 20.071,4.670 19.173,3.673 C18.288,2.693 17.071,2.153 15.747,2.153 C14.777,2.153 13.886,2.468 13.099,3.090 C12.399,3.644 11.910,4.344 11.624,4.833 C11.477,5.086 11.218,5.236 10.931,5.236 C10.644,5.236 10.385,5.086 10.238,4.833 C9.951,4.344 9.463,3.644 8.762,3.090 C7.976,2.468 7.085,2.153 6.115,2.153 L6.115,2.153 Z"/>
+							</svg>
+							<span class="icon__text">11 111</span>
+						</div>
+						<div class="icon_txt_right">
+							<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20" height="20" viewBox="0 0 104.9 105" style="enable-background:new 0 0 104.9 105;" xml:space="preserve">
+								<path d="M89.6,15.4C79.7,5.5,66.5,0,52.5,0S25.3,5.5,15.4,15.4C-3.8,34.5-5.2,65.1,11.9,85.8c-2.4,4.8-5.1,8-8.3,9.6 c-1.9,0.9-3,3-2.7,5.1c0.3,2.1,2,3.8,4.1,4.1c1.2,0.2,2.4,0.3,3.7,0.3c6.4,0,13.2-2.2,18.9-6.1c7.6,4.1,16.2,6.2,24.9,6.2 c14,0,27.2-5.5,37.1-15.4c9.9-9.9,15.4-23.1,15.4-37.1C104.9,38.5,99.5,25.3,89.6,15.4L89.6,15.4z M85.4,85.4 C76.6,94.2,64.9,99,52.5,99c-8.3,0-16.5-2.2-23.6-6.4c-0.5-0.3-1-0.4-1.5-0.4c-0.6,0-1.3,0.2-1.8,0.6c-6.7,5.2-13.5,6-16.5,6 c3.5-2.6,6.5-6.7,9-12.4c0.5-1.1,0.3-2.3-0.5-3.2c-16.3-18.4-15.4-46.4,2-63.8C28.4,10.8,40,5.9,52.5,5.9 c12.4,0,24.1,4.8,32.9,13.6C103.5,37.7,103.5,67.3,85.4,85.4L85.4,85.4z M85.4,85.4"/>
+								<path d="M74.5,35.2h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,36.5,76.1,35.2,74.5,35.2L74.5,35.2z M74.5,35.2"/>
+								<path d="M74.5,49.5h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,50.9,76.1,49.5,74.5,49.5L74.5,49.5z M74.5,49.5"/>
+								<path d="M74.5,63.9h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,65.2,76.1,63.9,74.5,63.9L74.5,63.9z M74.5,63.9"/>
+							</svg>
+							<span class="icon__text">11 111</span>
+						</div>
+					</div>
+					<div class="post-content">
+						<p>Двойной удар по целлюлиту и растяжкам.</p>
+						<p>Индийская куркума:<br> Способствует усилению лимфотока и кровотока, ускоряет обменные процессы и процесс расщепления жиров.<br> Маскирует растяжки, делая их светлее, разглаживает и постепенно полностью избавляет от них.</p>
+						<p>Эфирное масло сладкого апельсина:<br> Выводит шлаки, токсины и лишнюю жидкость из клеток, подтягивая и разглаживая кожу.<br> Нормализует углеводно-жировой обмен в коже, запуская программу по избавлению от целлюлита, растяжек и дряблости кожи.</p>
+						<p>Эти компоненты комплексно воздействуют на основные проблемы дряблой кожи — "апельсиновой корки", растяжек, потери упругости и эластичности...</p>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide happy-client__item">
+				<div class="post-preview">
+					<a href="#" class="post-preview__link" target="_blank">
+						<img src="img/happy_1.png" class="post-preview__photo" alt="">	
+					</a>
+					<div class="instagram-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px">
+						<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+						 d="M11.346,2.753 C14.140,2.753 14.471,2.763 15.575,2.814 C16.595,2.861 17.150,3.031 17.518,3.174 C18.007,3.364 18.356,3.592 18.722,3.958 C19.088,4.325 19.315,4.674 19.505,5.162 C19.648,5.532 19.819,6.085 19.865,7.107 C19.916,8.211 19.926,8.542 19.926,11.339 C19.926,14.135 19.916,14.467 19.865,15.570 C19.819,16.592 19.648,17.146 19.505,17.516 C19.315,18.004 19.088,18.352 18.722,18.719 C18.356,19.086 18.007,19.313 17.518,19.503 C17.150,19.647 16.595,19.817 15.575,19.864 C14.471,19.915 14.141,19.924 11.346,19.924 C8.551,19.924 8.219,19.915 7.116,19.864 C6.096,19.817 5.541,19.647 5.172,19.503 C4.684,19.313 4.335,19.086 3.969,18.719 C3.603,18.352 3.376,18.004 3.186,17.516 C3.043,17.146 2.872,16.592 2.826,15.570 C2.775,14.467 2.765,14.135 2.765,11.339 C2.765,8.542 2.775,8.211 2.826,7.107 C2.872,6.085 3.043,5.532 3.186,5.162 C3.376,4.674 3.603,4.325 3.969,3.958 C4.335,3.592 4.684,3.364 5.172,3.174 C5.541,3.031 6.096,2.861 7.116,2.814 C8.220,2.763 8.551,2.753 11.346,2.753 M11.346,0.866 C8.503,0.866 8.146,0.878 7.030,0.929 C5.916,0.981 5.155,1.156 4.489,1.416 C3.801,1.683 3.217,2.042 2.635,2.624 C2.054,3.206 1.696,3.790 1.428,4.478 C1.169,5.146 0.993,5.906 0.942,7.021 C0.891,8.138 0.879,8.495 0.879,11.339 C0.879,14.183 0.891,14.541 0.942,15.657 C0.993,16.771 1.169,17.533 1.428,18.199 C1.696,18.888 2.054,19.471 2.635,20.054 C3.217,20.637 3.801,20.995 4.489,21.261 C5.155,21.521 5.916,21.698 7.030,21.750 C8.146,21.800 8.503,21.812 11.346,21.812 C14.188,21.812 14.545,21.800 15.661,21.750 C16.775,21.698 17.536,21.521 18.202,21.261 C18.890,20.995 19.474,20.637 20.055,20.054 C20.637,19.471 20.995,18.888 21.263,18.199 C21.522,17.533 21.698,16.771 21.749,15.657 C21.800,14.541 21.812,14.183 21.812,11.339 C21.812,8.495 21.800,8.138 21.749,7.021 C21.698,5.906 21.522,5.146 21.263,4.478 C20.995,3.790 20.637,3.206 20.055,2.624 C19.474,2.042 18.890,1.683 18.202,1.416 C17.536,1.156 16.775,0.981 15.661,0.929 C14.545,0.878 14.188,0.866 11.346,0.866 ZM11.346,5.961 C8.377,5.961 5.971,8.369 5.971,11.339 C5.971,14.309 8.377,16.716 11.346,16.716 C14.314,16.716 16.720,14.309 16.720,11.339 C16.720,8.369 14.314,5.961 11.346,5.961 ZM11.346,14.830 C9.419,14.830 7.857,13.267 7.857,11.339 C7.857,9.410 9.419,7.848 11.346,7.848 C13.272,7.848 14.834,9.410 14.834,11.339 C14.834,13.267 13.272,14.830 11.346,14.830 ZM18.189,5.749 C18.189,6.442 17.626,7.006 16.933,7.006 C16.239,7.006 15.677,6.442 15.677,5.749 C15.677,5.054 16.239,4.492 16.933,4.492 C17.626,4.492 18.189,5.054 18.189,5.749 Z"/>
+						</svg>
+					</div>
+					<div class="instagram-user">
+						<div class="instagram-user__avatar">
+							<img src="img/happy_avatar_1.png" alt="">
+						</div>
+						<span class="instagram-user__login">@stella_mihailova</span>
+					</div>
+				</div>
+				<div class="post-box">
+					<div class="post-header">
+						<div class="icon_txt_right">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="21px">
+							<path fill-rule="evenodd"  fill="rgb(37, 54, 59)"
+							 d="M10.931,20.690 C10.620,20.690 10.320,20.574 10.087,20.365 C9.205,19.578 8.355,18.837 7.605,18.185 L7.601,18.181 C5.402,16.267 3.503,14.613 2.182,12.984 C0.705,11.162 0.017,9.436 0.017,7.549 C0.017,5.716 0.632,4.026 1.749,2.789 C2.879,1.536 4.429,0.847 6.115,0.847 C7.375,0.847 8.529,1.253 9.544,2.056 C10.057,2.462 10.521,2.956 10.931,3.536 C11.340,2.956 11.805,2.462 12.317,2.056 C13.333,1.253 14.487,0.847 15.747,0.847 C17.432,0.847 18.983,1.536 20.113,2.789 C21.229,4.026 21.844,5.716 21.844,7.549 C21.844,9.436 21.156,11.162 19.680,12.983 C18.358,14.613 16.460,16.266 14.261,18.181 C13.510,18.835 12.658,19.576 11.774,20.365 C11.541,20.574 11.241,20.690 10.931,20.690 L10.931,20.690 ZM6.115,2.153 C4.790,2.153 3.574,2.693 2.689,3.673 C1.791,4.670 1.296,6.046 1.296,7.549 C1.296,9.135 1.873,10.554 3.166,12.151 C4.417,13.691 6.277,15.311 8.430,17.186 L8.434,17.191 C9.187,17.846 10.041,18.589 10.929,19.383 C11.822,18.587 12.677,17.843 13.431,17.186 C15.585,15.311 17.445,13.691 18.695,12.151 C19.989,10.554 20.566,9.135 20.566,7.549 C20.566,6.046 20.071,4.670 19.173,3.673 C18.288,2.693 17.071,2.153 15.747,2.153 C14.777,2.153 13.886,2.468 13.099,3.090 C12.399,3.644 11.910,4.344 11.624,4.833 C11.477,5.086 11.218,5.236 10.931,5.236 C10.644,5.236 10.385,5.086 10.238,4.833 C9.951,4.344 9.463,3.644 8.762,3.090 C7.976,2.468 7.085,2.153 6.115,2.153 L6.115,2.153 Z"/>
+							</svg>
+							<span class="icon__text">11 111</span>
+						</div>
+						<div class="icon_txt_right">
+							<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20" height="20" viewBox="0 0 104.9 105" style="enable-background:new 0 0 104.9 105;" xml:space="preserve">
+								<path d="M89.6,15.4C79.7,5.5,66.5,0,52.5,0S25.3,5.5,15.4,15.4C-3.8,34.5-5.2,65.1,11.9,85.8c-2.4,4.8-5.1,8-8.3,9.6 c-1.9,0.9-3,3-2.7,5.1c0.3,2.1,2,3.8,4.1,4.1c1.2,0.2,2.4,0.3,3.7,0.3c6.4,0,13.2-2.2,18.9-6.1c7.6,4.1,16.2,6.2,24.9,6.2 c14,0,27.2-5.5,37.1-15.4c9.9-9.9,15.4-23.1,15.4-37.1C104.9,38.5,99.5,25.3,89.6,15.4L89.6,15.4z M85.4,85.4 C76.6,94.2,64.9,99,52.5,99c-8.3,0-16.5-2.2-23.6-6.4c-0.5-0.3-1-0.4-1.5-0.4c-0.6,0-1.3,0.2-1.8,0.6c-6.7,5.2-13.5,6-16.5,6 c3.5-2.6,6.5-6.7,9-12.4c0.5-1.1,0.3-2.3-0.5-3.2c-16.3-18.4-15.4-46.4,2-63.8C28.4,10.8,40,5.9,52.5,5.9 c12.4,0,24.1,4.8,32.9,13.6C103.5,37.7,103.5,67.3,85.4,85.4L85.4,85.4z M85.4,85.4"/>
+								<path d="M74.5,35.2h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,36.5,76.1,35.2,74.5,35.2L74.5,35.2z M74.5,35.2"/>
+								<path d="M74.5,49.5h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,50.9,76.1,49.5,74.5,49.5L74.5,49.5z M74.5,49.5"/>
+								<path d="M74.5,63.9h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,65.2,76.1,63.9,74.5,63.9L74.5,63.9z M74.5,63.9"/>
+							</svg>
+							<span class="icon__text">11 111</span>
+						</div>
+					</div>
+					<div class="post-content">
+						<p>Двойной удар по целлюлиту и растяжкам.</p>
+						<p>Индийская куркума:<br> Способствует усилению лимфотока и кровотока, ускоряет обменные процессы и процесс расщепления жиров.<br> Маскирует растяжки, делая их светлее, разглаживает и постепенно полностью избавляет от них.</p>
+						<p>Эфирное масло сладкого апельсина:<br> Выводит шлаки, токсины и лишнюю жидкость из клеток, подтягивая и разглаживая кожу.<br> Нормализует углеводно-жировой обмен в коже, запуская программу по избавлению от целлюлита, растяжек и дряблости кожи.</p>
+						<p>Эти компоненты комплексно воздействуют на основные проблемы дряблой кожи — "апельсиновой корки", растяжек, потери упругости и эластичности...</p>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide happy-client__item">
+				<div class="post-preview">
+					<a href="#" class="post-preview__link" target="_blank">
+						<img src="img/happy_1.png" class="post-preview__photo" alt="">	
+					</a>
+					<div class="instagram-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="22px">
+						<path fill-rule="evenodd"  fill="rgb(255, 255, 255)"
+						 d="M11.346,2.753 C14.140,2.753 14.471,2.763 15.575,2.814 C16.595,2.861 17.150,3.031 17.518,3.174 C18.007,3.364 18.356,3.592 18.722,3.958 C19.088,4.325 19.315,4.674 19.505,5.162 C19.648,5.532 19.819,6.085 19.865,7.107 C19.916,8.211 19.926,8.542 19.926,11.339 C19.926,14.135 19.916,14.467 19.865,15.570 C19.819,16.592 19.648,17.146 19.505,17.516 C19.315,18.004 19.088,18.352 18.722,18.719 C18.356,19.086 18.007,19.313 17.518,19.503 C17.150,19.647 16.595,19.817 15.575,19.864 C14.471,19.915 14.141,19.924 11.346,19.924 C8.551,19.924 8.219,19.915 7.116,19.864 C6.096,19.817 5.541,19.647 5.172,19.503 C4.684,19.313 4.335,19.086 3.969,18.719 C3.603,18.352 3.376,18.004 3.186,17.516 C3.043,17.146 2.872,16.592 2.826,15.570 C2.775,14.467 2.765,14.135 2.765,11.339 C2.765,8.542 2.775,8.211 2.826,7.107 C2.872,6.085 3.043,5.532 3.186,5.162 C3.376,4.674 3.603,4.325 3.969,3.958 C4.335,3.592 4.684,3.364 5.172,3.174 C5.541,3.031 6.096,2.861 7.116,2.814 C8.220,2.763 8.551,2.753 11.346,2.753 M11.346,0.866 C8.503,0.866 8.146,0.878 7.030,0.929 C5.916,0.981 5.155,1.156 4.489,1.416 C3.801,1.683 3.217,2.042 2.635,2.624 C2.054,3.206 1.696,3.790 1.428,4.478 C1.169,5.146 0.993,5.906 0.942,7.021 C0.891,8.138 0.879,8.495 0.879,11.339 C0.879,14.183 0.891,14.541 0.942,15.657 C0.993,16.771 1.169,17.533 1.428,18.199 C1.696,18.888 2.054,19.471 2.635,20.054 C3.217,20.637 3.801,20.995 4.489,21.261 C5.155,21.521 5.916,21.698 7.030,21.750 C8.146,21.800 8.503,21.812 11.346,21.812 C14.188,21.812 14.545,21.800 15.661,21.750 C16.775,21.698 17.536,21.521 18.202,21.261 C18.890,20.995 19.474,20.637 20.055,20.054 C20.637,19.471 20.995,18.888 21.263,18.199 C21.522,17.533 21.698,16.771 21.749,15.657 C21.800,14.541 21.812,14.183 21.812,11.339 C21.812,8.495 21.800,8.138 21.749,7.021 C21.698,5.906 21.522,5.146 21.263,4.478 C20.995,3.790 20.637,3.206 20.055,2.624 C19.474,2.042 18.890,1.683 18.202,1.416 C17.536,1.156 16.775,0.981 15.661,0.929 C14.545,0.878 14.188,0.866 11.346,0.866 ZM11.346,5.961 C8.377,5.961 5.971,8.369 5.971,11.339 C5.971,14.309 8.377,16.716 11.346,16.716 C14.314,16.716 16.720,14.309 16.720,11.339 C16.720,8.369 14.314,5.961 11.346,5.961 ZM11.346,14.830 C9.419,14.830 7.857,13.267 7.857,11.339 C7.857,9.410 9.419,7.848 11.346,7.848 C13.272,7.848 14.834,9.410 14.834,11.339 C14.834,13.267 13.272,14.830 11.346,14.830 ZM18.189,5.749 C18.189,6.442 17.626,7.006 16.933,7.006 C16.239,7.006 15.677,6.442 15.677,5.749 C15.677,5.054 16.239,4.492 16.933,4.492 C17.626,4.492 18.189,5.054 18.189,5.749 Z"/>
+						</svg>
+					</div>
+					<div class="instagram-user">
+						<div class="instagram-user__avatar">
+							<img src="img/happy_avatar_1.png" alt="">
+						</div>
+						<span class="instagram-user__login">@stella_mihailova</span>
+					</div>
+				</div>
+				<div class="post-box">
+					<div class="post-header">
+						<div class="icon_txt_right">
+							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="22px" height="21px">
+							<path fill-rule="evenodd"  fill="rgb(37, 54, 59)"
+							 d="M10.931,20.690 C10.620,20.690 10.320,20.574 10.087,20.365 C9.205,19.578 8.355,18.837 7.605,18.185 L7.601,18.181 C5.402,16.267 3.503,14.613 2.182,12.984 C0.705,11.162 0.017,9.436 0.017,7.549 C0.017,5.716 0.632,4.026 1.749,2.789 C2.879,1.536 4.429,0.847 6.115,0.847 C7.375,0.847 8.529,1.253 9.544,2.056 C10.057,2.462 10.521,2.956 10.931,3.536 C11.340,2.956 11.805,2.462 12.317,2.056 C13.333,1.253 14.487,0.847 15.747,0.847 C17.432,0.847 18.983,1.536 20.113,2.789 C21.229,4.026 21.844,5.716 21.844,7.549 C21.844,9.436 21.156,11.162 19.680,12.983 C18.358,14.613 16.460,16.266 14.261,18.181 C13.510,18.835 12.658,19.576 11.774,20.365 C11.541,20.574 11.241,20.690 10.931,20.690 L10.931,20.690 ZM6.115,2.153 C4.790,2.153 3.574,2.693 2.689,3.673 C1.791,4.670 1.296,6.046 1.296,7.549 C1.296,9.135 1.873,10.554 3.166,12.151 C4.417,13.691 6.277,15.311 8.430,17.186 L8.434,17.191 C9.187,17.846 10.041,18.589 10.929,19.383 C11.822,18.587 12.677,17.843 13.431,17.186 C15.585,15.311 17.445,13.691 18.695,12.151 C19.989,10.554 20.566,9.135 20.566,7.549 C20.566,6.046 20.071,4.670 19.173,3.673 C18.288,2.693 17.071,2.153 15.747,2.153 C14.777,2.153 13.886,2.468 13.099,3.090 C12.399,3.644 11.910,4.344 11.624,4.833 C11.477,5.086 11.218,5.236 10.931,5.236 C10.644,5.236 10.385,5.086 10.238,4.833 C9.951,4.344 9.463,3.644 8.762,3.090 C7.976,2.468 7.085,2.153 6.115,2.153 L6.115,2.153 Z"/>
+							</svg>
+							<span class="icon__text">11 111</span>
+						</div>
+						<div class="icon_txt_right">
+							<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20" height="20" viewBox="0 0 104.9 105" style="enable-background:new 0 0 104.9 105;" xml:space="preserve">
+								<path d="M89.6,15.4C79.7,5.5,66.5,0,52.5,0S25.3,5.5,15.4,15.4C-3.8,34.5-5.2,65.1,11.9,85.8c-2.4,4.8-5.1,8-8.3,9.6 c-1.9,0.9-3,3-2.7,5.1c0.3,2.1,2,3.8,4.1,4.1c1.2,0.2,2.4,0.3,3.7,0.3c6.4,0,13.2-2.2,18.9-6.1c7.6,4.1,16.2,6.2,24.9,6.2 c14,0,27.2-5.5,37.1-15.4c9.9-9.9,15.4-23.1,15.4-37.1C104.9,38.5,99.5,25.3,89.6,15.4L89.6,15.4z M85.4,85.4 C76.6,94.2,64.9,99,52.5,99c-8.3,0-16.5-2.2-23.6-6.4c-0.5-0.3-1-0.4-1.5-0.4c-0.6,0-1.3,0.2-1.8,0.6c-6.7,5.2-13.5,6-16.5,6 c3.5-2.6,6.5-6.7,9-12.4c0.5-1.1,0.3-2.3-0.5-3.2c-16.3-18.4-15.4-46.4,2-63.8C28.4,10.8,40,5.9,52.5,5.9 c12.4,0,24.1,4.8,32.9,13.6C103.5,37.7,103.5,67.3,85.4,85.4L85.4,85.4z M85.4,85.4"/>
+								<path d="M74.5,35.2h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,36.5,76.1,35.2,74.5,35.2L74.5,35.2z M74.5,35.2"/>
+								<path d="M74.5,49.5h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,50.9,76.1,49.5,74.5,49.5L74.5,49.5z M74.5,49.5"/>
+								<path d="M74.5,63.9h-44c-1.6,0-3,1.3-3,3c0,1.6,1.3,3,3,3h44c1.6,0,3-1.3,3-3C77.4,65.2,76.1,63.9,74.5,63.9L74.5,63.9z M74.5,63.9"/>
+							</svg>
+							<span class="icon__text">11 111</span>
+						</div>
+					</div>
+					<div class="post-content">
+						<p>Двойной удар по целлюлиту и растяжкам.</p>
+						<p>Индийская куркума:<br> Способствует усилению лимфотока и кровотока, ускоряет обменные процессы и процесс расщепления жиров.<br> Маскирует растяжки, делая их светлее, разглаживает и постепенно полностью избавляет от них.</p>
+						<p>Эфирное масло сладкого апельсина:<br> Выводит шлаки, токсины и лишнюю жидкость из клеток, подтягивая и разглаживая кожу.<br> Нормализует углеводно-жировой обмен в коже, запуская программу по избавлению от целлюлита, растяжек и дряблости кожи.</p>
+						<p>Эти компоненты комплексно воздействуют на основные проблемы дряблой кожи — "апельсиновой корки", растяжек, потери упругости и эластичности...</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+	
+</section>
+
+<section class="product-carousel-wrapper pattern">
+	<div class="container">
+		<div class="section-title">
+			<span class="section-title__icon">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 469 400" style="enable-background:new 0 0 469 400;" fill="#ff9ac7" xml:space="preserve">
+						<path d="M216.9,174.1l26.9,27.1c1.9,1.9,4.4,3,7.1,3c2.6,0,5.2-1.1,7.1-2.9l48-48c3.9-3.9,3.9-10.2,0-14.1 c-3.9-3.9-10.2-3.9-14.1,0L251,180.2l-19.9-20.1c-3.9-3.9-10.2-4-14.1-0.1C213.1,163.8,213,170.1,216.9,174.1L216.9,174.1z M216.9,174.1"/>
+						<path d="M459.2,68.2H92.7l-3-17.6c-4.8-28.8-29.8-49.9-59-49.8H10c-5.5,0-10,4.5-10,10c0,5.5,4.5,10,10,10h20.7
+							c19.5,0,36.1,14,39.3,33.2l47,274.9c-2,5.7-3.1,11.6-3.1,17.7c0,27.3,20.7,50.1,47.9,52.7c27.2,2.6,51.8-15.9,56.9-42.7h89.9
+							c5.2,26.7,29.8,45.2,56.9,42.6c27.1-2.6,47.8-25.4,47.8-52.6s-20.7-50-47.8-52.6c-27.1-2.6-51.8,15.8-56.9,42.6h-89.9
+							c-3.6-18.3-16.5-33.4-34-39.7c-17.5-6.3-37.1-3-51.5,8.8l-6.1-35.4h243.2c26.9-0.1,50.4-18,57.7-43.8l40.6-145.7
+							c0.8-3,0.2-6.2-1.7-8.7C465.1,69.5,462.2,68.1,459.2,68.2L459.2,68.2z M360.5,313.7c18.2,0,32.9,14.8,32.9,32.9
+							c0,18.2-14.7,32.9-32.9,32.9c-18.2,0-32.9-14.7-32.9-32.9C327.6,328.5,342.4,313.7,360.5,313.7L360.5,313.7z M166.9,313.7
+							c18.2,0,32.9,14.8,32.9,32.9c0,18.2-14.8,32.9-32.9,32.9c-18.2,0-32.9-14.7-32.9-32.9c0-4,0.8-8,2.2-11.7c0.3-0.6,0.6-1.2,0.8-1.9
+							C142.2,321.3,154,313.7,166.9,313.7L166.9,313.7z M409,221.2c-4.8,17.2-20.5,29.2-38.4,29.2H123.9L96.1,88.1H446L409,221.2z
+							 M409,221.2"/>
+				</svg>
+			</span>
+			<h4 class="section-title__text">ДЛЯ ДОСТИЖЕНИЯ МАКСИМАЛЬНОГО ЭФФЕКТА</h4>
+		</div>
+
+		<div class="product-carousel swiper-container">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide product-carousel__item">
+					<a href="product.html" class="choose-for-yourself__title">COCONUT matcha lime</a>
+					<p class="choose-for-yourself__descr">Скраб для тела с японским чаем Матча и эфирным маслом лайма</p>
+					<a href="product.html" class="product-carousel__preview">
+						<img src="img/product-carousel_1.png" alt="">
+						<p class="product-carousel__price">990 <span class="product-carousel__currency">руб</span></p>
+					</a>
+					<form action="" class="product-carousel_from-add">
+						<button type="submit" class="btn-second">ДОБАВИТЬ В КОРЗИНУ</button>
+					</form>
+				</div>
+				<div class="swiper-slide product-carousel__item">
+					<a href="product.html" class="choose-for-yourself__title">COCONUT TURMERIC ORANGE</a>
+					<p class="choose-for-yourself__descr">Скраб для тела с индийской куркумой и эфирным маслом апельсина </p>
+					<a href="product.html" class="product-carousel__preview">
+						<img src="img/product-carousel_2.png" alt="">
+						<p class="product-carousel__price">990 <span class="product-carousel__currency">руб</span></p>
+					</a>
+					<form action="" class="product-carousel_from-add">
+						<button type="submit" class="btn-second">ДОБАВИТЬ В КОРЗИНУ</button>
+					</form>
+				</div>
+				<div class="swiper-slide product-carousel__item">
+					<a href="product.html" class="choose-for-yourself__title">COCONUT PINK SALT LYCHEE</a>
+					<p class="choose-for-yourself__descr">Скраб для тела с гималайской солью и эфирным маслом личи</p>
+					<a href="product.html" class="product-carousel__preview">
+						<img src="img/product-carousel_3.png" alt="">
+						<p class="product-carousel__price">990 <span class="product-carousel__currency">руб</span></p>
+					</a>
+					<form action="" class="product-carousel_from-add">
+						<button type="submit" class="btn-second">ДОБАВИТЬ В КОРЗИНУ</button>
+					</form>
+				</div>
+				<div class="swiper-slide product-carousel__item">
+					<a href="product.html" class="choose-for-yourself__title">COCONUT TURMERIC ORANGE</a>
+					<p class="choose-for-yourself__descr">Скраб для тела с индийской куркумой и эфирным маслом апельсина </p>
+					<a href="product.html" class="product-carousel__preview">
+						<img src="img/product-carousel_1.png" alt="">
+						<p class="product-carousel__price">990 <span class="product-carousel__currency">руб</span></p>
+					</a>
+					<form action="" class="product-carousel_from-add">
+						<button type="submit" class="btn-second">ДОБАВИТЬ В КОРЗИНУ</button>
+					</form>
+				</div>
+			</div>
+			<div class="product-carousel__next">
+				<svg version="1.1" width="21" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 190 358" style="enable-background:new 0 0 190 358;" xml:space="preserve">
+					<path d="M186.5,171.8L17.7,3c-4-4-10.3-4-14.3,0c-4,4-4,10.4,0,14.3L165,178.9L3.4,340.6c-4,4-4,10.4,0,14.3 c1.9,1.9,4.6,3,7.1,3c2.6,0,5.2-1,7.1-3l168.8-168.8C190.4,182.2,190.4,175.7,186.5,171.8L186.5,171.8z M186.5,171.8"/>
+				</svg>
+			</div>
+			<div class="product-carousel__prev">
+				<svg version="1.1" width="21" height="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 190 358" style="enable-background:new 0 0 190 358; transform: rotate(180deg);" xml:space="preserve">
+					<path d="M186.5,171.8L17.7,3c-4-4-10.3-4-14.3,0c-4,4-4,10.4,0,14.3L165,178.9L3.4,340.6c-4,4-4,10.4,0,14.3 c1.9,1.9,4.6,3,7.1,3c2.6,0,5.2-1,7.1-3l168.8-168.8C190.4,182.2,190.4,175.7,186.5,171.8L186.5,171.8z M186.5,171.8"/>
+				</svg>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="subscribe-offer-wrapper" style="background-color: #5bdbe8;">
+	<div class="container">
+		<div class="subscribe-offer">
+			<div class="subscribe-offer-box">
+				<div class="subscribe-offer__icon">
+					<svg version="1.1" width="57" heihgt="45" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="29.4 269.4 377.5 297.5" style="enable-background:new 29.4 269.4 377.5 297.5; fill: #fff;" xml:space="preserve">
+					<path d="M372.4,354.1c-2.8-1.4-5.6-2.9-8-4.2l-143.5-79.8c-1.7-1-3.8-1-5.5,0l-143.6,80c-2.4,1.3-5.2,2.8-8,4.2
+						c-17.9,9.4-34.4,18.1-34.4,40v127.4c0.1,24.9,20.2,45.1,45.1,45.1h287.3c24.9-0.1,45.1-20.2,45.1-45.1V394.1
+						C406.9,372.3,390.2,363.6,372.4,354.1z M69.1,364c2.6-1.4,5.2-2.8,8-4.4l141.1-78.4l140.9,78.4c3,1.6,5.6,3,8,4.4
+						c13.8,7.2,26.6,14,28.3,27.2l-81.7,48c3.9-7,6.8-14.5,8.6-22.2l0,0c8.5-32.4-10.9-65.4-43.3-73.9c-22.2-5.8-45.7,1.4-60.8,18.7
+						c-21.8-25.3-60.1-28.1-85.4-6.3c-17.6,15.2-24.9,39.1-18.9,61.5l0,0c1.8,7.8,4.7,15.3,8.6,22.2l-81.7-48
+						C42.5,378.1,55.3,371.2,69.1,364z M313.4,401.4c0,2.2-0.1,4.4-0.4,6.6c-0.3,2.2-0.7,4.3-1.3,6.4v0.2l0,0
+						c-4.3,18.8-16,34.2-32.2,47.4c-18.8,14.1-39.4,25.6-61.3,34.1c-21.9-8.5-42.5-20-61.2-34.1c-16.4-13.2-28-28.6-32.2-47.4v-0.6
+						c-0.5-2-0.9-4.1-1.2-6.1c-0.3-2.2-0.4-4.4-0.4-6.6c0.2-27.3,22.4-49.3,49.7-49.2c16.4,0.1,31.6,8.3,40.8,21.9
+						c1.7,2.6,5.1,3.3,7.7,1.6c0.6-0.4,1.2-1,1.6-1.6c4.5-6.8,10.7-12.3,17.8-16.2c24.1-12.9,54-3.8,66.9,20.3c3.8,7.2,5.8,15.2,5.8,23.3
+						V401.4z M40.6,404l91.6,54.1l-91.7,54L40.6,404z M385.8,545.8c-6.4,6.4-15,10-24,10H74.5c-17.5-0.1-32.2-13.4-33.8-30.9l102.2-60.2
+						c2.3,2.1,4.6,4.1,7.1,6.1c17.8,14.4,40.7,26.1,66.1,36.6c1.4,0.6,2.9,0.6,4.2,0c25.4-10.5,48.3-22.2,65.9-36.6c2.5-2,4.8-4,7.1-6.1
+						l102.2,60.2C394.7,532.8,391.3,540.1,385.8,545.8L385.8,545.8z M395.8,512l-91.7-53.9l91.7-54V512z"/>
+					</svg>
+				</div>
+				<div class="subscribe-offer__title-box">
+					<h2 class="subscribe-offer__title">Хочешь скидку на первый заказ?</h2>
+					<p class="subscribe-offer__descr">заполни форму, получи купон на скидку и подробную программу по уходу за кожей</p>
+				</div>
+				<form class="subscribe-form">
+					<input type="text" class="input" placeholder="Введите e-mail">
+					<input type="submit" class="btn" value="Подписаться">
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+<div class="pop-up_purchase">
+	<button class="pop-up_purchase__btn-close">
+		<svg version="1.1" width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+			 viewBox="0 0 35.4 35.4" style="enable-background:new 0 0 35.4 35.4; fill:none;stroke:#E39BC1;stroke-width:5;stroke-linecap:round;stroke-miterlimit:10;" xml:space="preserve">
+			<line x1="2.5" y1="2.5" x2="32.9" y2="32.9"/>
+			<line x1="32.9" y1="2.5" x2="2.5" y2="32.9"/>
+		</svg>
+	</button>
+	<div class="pop-up_purchase__box">
+		<div class="pop-up_purchase__preview">
+			<img src="img/pop-up__purchase_1.png" alt="">
+		</div>
+		<div class="pop-up_purchase__info">
+			Татьяна Шилова, г. Архангельск, только что купила скраб <a href="product.html">Coconut Spirulina Vanilla</a>, 1 шт за 990 руб.
+		</div>
+	</div>
+</div>
+
+<div class="briefly-product-wrapper" style="background-color: #5bdbe8;">
+	<div class="container">
+		<div class="briefly-product">
+			<div class="briefly-product-left">
+				<div class="briefly-product__preview">
+					<img src="img/briefly-product__preview_1.png" alt="">
+				</div>
+				<div class="briefly-product__title">
+					<p>COCONUT SPIRULINA VANILLA</p>
+					<p>Скраб для тела с голубой спирулиной и эфирным маслом ванили</p>
+				</div>	
+			</div>
+			<div class="briefly-product-right">
+				<div class="briefly-product__price">990 <span class="briefly-product__currency">руб</span></div>
+				<form action="" class="product-page__add-form">
+					<input class="spinner-input" type="number" value="1" min="1" max="100" step="1">
+					<button type="submit" class="product-page__add-btn">Купить</button>
+				</form>
+			</div>
+		</div>	
+	</div>
+</div>
+
+		</main>
+
+		<footer id="footer" class="footer">
+			<div class="container footer-container">
+				<div class="footer-box">
+					<h3 class="footer-box__title">Страницы</h3>	
+					<ul class="footer-menu">
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="catalog.html">Каталог</a></li>
+						<li><a href="faq.html">FAQ</a></li>
+					</ul>
+					<ul class="footer-menu">
+						<li><a href="#">Cертификаты</a></li>
+						<li><a href="#">Политика конфиденциальности</a></li>
+					</ul>
+				</div>
+				<div class="footer-box footer-box__contact">
+					<h3 class="footer-box__title">Контакты:</h3>
+					<ul class="menu-icons">
+						<li><a href="#">
+							<img src="img/icons/mail.png" alt="">
+							<span class="menu-icons__text">Написать на Mail</span>
+						</a></li>
+						<li><a href="#">
+							<img src="img/icons/telegram.png" alt="">
+							<span class="menu-icons__text">Написать в Telegram</span>
+						</a></li>
+						<li><a href="#">
+							<img src="img/icons/whatsapp.png" alt=""></a>
+							<span class="menu-icons__text">Написать в WhatsApp</span>
+						</li>
+					</ul>
+				</div>
+				<div class="footer-box footer-box__soc">
+					<h3 class="footer-box__title">Мы в соцсетях:</h3>
+					<ul class="menu-icons">
+						<li><a href="#">
+							<img src="img/icons/instagram.png" alt="">
+							<u class="menu-icons__text">Написать в Instagram</u>
+						</a></li>
+						<li><a href="#">
+							<img src="img/icons/vk.png" alt="">
+							<u class="menu-icons__text">Написать в VK</u>
+						</a></li>
+						<li><a href="#">
+							<img src="img/icons/facebook.png" alt=""></a>
+							<u class="menu-icons__text">Написать в Facebook</u>
+						</li>
+					</ul>
+				</div>
+				<div class="footer-box footer-box__pay">
+					<h3 class="footer-box__title">Способы оплаты:</h3>
+					<ul class="menu-icons">
+						<li><a href="#">
+							<img src="img/icons/qiwi.png" alt=""></a>
+						</li>
+						<li><a href="#">
+							<img src="img/icons/yandex.png" alt=""></a>
+						</li>
+						<li><a href="#">
+							<img src="img/icons/sber.png" alt=""></a>
+						</li>
+						<li><a href="#">
+							<img src="img/icons/google.png" alt=""></a>
+						</li>
+						<li><a href="#">
+							<img src="img/icons/apple.png" alt=""></a>
+						</li>
+						<li><a href="#">
+							<img src="img/icons/maestro.png" alt=""></a>
+						</li>
+						<li><a href="#">
+							<img src="img/icons/mastercard.png" alt="">
+						</a></li>
+						<li><a href="#">
+							<img src="img/icons/visa-1.png" alt="">
+						</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-pattern"></div>
+		</footer>
+
+
+
+<div class="pop-up_busket">
+	<div class="pop-up_busket-container">
+		<div class="pop-up_busket__header">
+			<div class="pop-up_busket-product">
+				<div class="pop-up_busket__preview">
+					<a href="product.html"><img src="img/pop-up_busket__preview_1.png" alt=""></a>
+				</div>
+				<div class="pop-up_busket__info">
+					<a href="#" class="pop-up_busket__title">Coconut Turmeric Orange</a>
+					<p class="pop-up_busket__description">Скраб для тела с индийской куркумой и эфирным маслом апельсина</p>
+					<div class="pop-up_busket__spinner">
+						<input type="number" class="circle-spinner-input" value="1" min="1" max="100" step="1">
+					</div>
+					<div class="pop-up_busket__amount">
+						<span class="pop-up_busket__count">1</span>&nbsp;x&nbsp;990<span class="pop-up_busket__currency">руб</span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pop-up_busket__content">
+			<h3 class="content-title">ВЫ ВЫБРАЛИ ЭФФЕКТИВНЫЙ КОМПЛЕКС ИЗ ТРЕХ СКРАБОВ ПО АКЦИИ 1+1=3</h3>
+			<div class="pop-up_busket-products">
+				<div class="pop-up_busket-product">
+					<div class="pop-up_busket__preview">
+						<a href="product.html"><img src="img/pop-up_busket__preview_2.png" alt=""></a>
+					</div>
+					<div class="pop-up_busket__info">
+						<a href="#" class="pop-up_busket__title">Coconut Matcha Lime</a>
+						<p class="pop-up_busket__description">Скраб для тела с японским чаем Матча и эфирным маслом лайма</p>
+						<div class="pop-up_busket__spinner">
+							<input type="number" class="circle-spinner-input" value="1" min="1" max="100" step="1">
+						</div>
+						<div class="pop-up_busket__amount">
+							<span class="pop-up_busket__count">1</span>&nbsp;x&nbsp;990<span class="pop-up_busket__currency">руб</span>
+						</div>
+					</div>
+				</div>
+				<div class="pop-up_busket-product">
+					<div class="pop-up_busket__preview">
+						<a href="product.html"><img src="img/pop-up_busket__preview_3.png" alt=""></a>
+					</div>
+					<div class="pop-up_busket__info">
+						<a href="#" class="pop-up_busket__title">Coconut Spirulina Vanilla</a>
+						<p class="pop-up_busket__description">Скраб для тела с голубой спирулиной и эфирным маслом ванили</p>
+						<div class="pop-up_busket__spinner">
+							<input type="number" class="circle-spinner-input" value="1" min="1" max="100" step="1">
+						</div>
+						<div class="pop-up_busket__amount">
+							<span class="pop-up_busket__count">1</span>&nbsp;x&nbsp;990<span class="pop-up_busket__currency">руб</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="pop-up_busket-total">
+			<p class="pop-up_busket-total__title">ОБЩАЯ СУММА</p>
+			<p><del class="pop-up_busket-total__old-price">2970 РУБ</del> <span class="pop-up_busket-total__amount">2970 РУБ</span></p>
+		</div>
+		
+		<a href="busket.html" class="btn-second" id="btn__busket-checkout">Оформить</a>
+
+		<div class="pop-up_busket-action">
+			<svg version="1.1" width="37" height="19" fill="#133238"
+				 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 36.4 18.2"
+				 style="enable-background:new 0 0 36.4 18.2;" xml:space="preserve">
+				<path d="M6.4,1.1C6.6,0.2,6.9,0,7.9,0C14,0,20.2,0,26.3,0c1,0,1.3,0.3,1.2,1.3c-0.1,0.8-0.1,1.7-0.2,2.6H29
+					c0.7,0,1.4,0,2,0c0.7,0,1.3,0.3,1.8,0.8c1,1,1.9,2.1,2.9,3.1c0.5,0.5,0.7,1.1,0.7,1.8c-0.1,1.6-0.3,3.2-0.4,4.8
+					c-0.1,0.7-0.6,1-1.4,0.9c-0.3-2.2-1.3-3.4-3-3.5c-1.1-0.1-2,0.2-2.8,0.9c-0.7,0.6-0.8,0.8-1.5,2.6H15.8c0-1.1-0.3-2.1-1.1-2.8
+					c-0.6-0.5-1.4-0.8-2.2-0.8c-1.9,0-3.5,1.4-3.9,3.6c-0.9,0-1.8,0-2.6,0c-0.4,0-0.6-0.4-0.6-0.8c0.1-1.4,0.2-2.7,0.3-4.1
+					c0-0.1,0.2-0.2,0.4-0.2c0.9,0,1.7,0,2.6,0c0.1,0,0.3,0,0.4,0c0.3-0.1,0.5-0.3,0.5-0.6c0-0.4-0.2-0.5-0.6-0.5c-1.6,0-3.1,0-4.7,0
+					c-1.1,0-2.3,0-3.4,0C0.3,9.1,0,8.9,0,8.5c0-0.4,0.3-0.6,0.8-0.6c3.6,0,7.2,0,10.8,0c0.3,0,0.5,0,0.8,0c0.5,0,0.7-0.2,0.7-0.6
+					c0-0.5-0.3-0.5-0.7-0.5c-2.1,0-4.2,0-6.3,0c-1,0-2.1,0-3.1,0c-0.6,0-0.8-0.1-0.8-0.5c0-0.4,0.3-0.6,0.8-0.6c2.3,0,4.6,0,6.9,0
+					c0.1,0,0.3,0,0.4,0c0.4,0,0.7-0.3,0.7-0.6c0-0.4-0.3-0.5-0.7-0.5c-1.2,0-2.4,0-3.6,0H1.8C1.3,4.5,1,4.4,1,4c0-0.4,0.3-0.6,0.8-0.6
+					c3.2,0,6.4,0,9.7,0c0.2,0,0.3,0,0.5,0c0.4,0,0.6-0.2,0.6-0.6c0-0.4-0.3-0.5-0.7-0.5c-2.1,0-4.2,0-6.3,0c-0.6,0-1.1,0-1.7,0
+					c-0.4,0-0.7-0.1-0.7-0.5c0-0.4,0.3-0.6,0.7-0.6C4.8,1.1,5.6,1.1,6.4,1.1 M34.6,8.1c-1-1-1.9-2-2.8-3c-0.2-0.2-0.4-0.3-0.6-0.3
+					c-1,0-2,0-3,0C28.1,5.9,28,7,27.9,8.1H34.6z"/>
+				<path d="M15,15.1c0,1.7-1.5,3.1-3.1,3.1c-1.5,0-2.6-1.2-2.6-2.6c0-1.7,1.5-3.1,3.1-3.1C13.9,12.5,15,13.6,15,15.1"/>
+				<path d="M33.7,15.1c0,1.7-1.5,3.1-3.1,3.1c-1.5,0-2.6-1.1-2.6-2.6c0-1.7,1.4-3.1,3.1-3.1
+					C32.6,12.4,33.7,13.6,33.7,15.1"/>
+			</g>
+			</svg>
+			<span>До бесплатной доставки осталось 990 руб</span>
+		</div>
+	</div>
+</div>
+
+		
+		<script src="js/scripts.min.js"></script>
+		<script src="js/scripts.custom.js"></script>
+	</div>
+</body>
+</html>
